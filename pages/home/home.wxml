@@ -1,0 +1,12 @@
+<view class="home">
+  
+  <view class="home-head">
+    <image src="../../assets/images/head-home.png" class="imag"></image>
+  </view>
+
+  <van-tabs class="hoe-tabs">
+    <van-tab title="标签 1">内容 1</van-tab>
+    <van-tab title="标签 2">内容 2</van-tab>
+  </van-tabs>
+
+</view>

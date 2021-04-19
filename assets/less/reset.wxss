@@ -1,0 +1,146 @@
+/* css reset */
+html {
+    -webkit-font-smoothing: antialiased
+}
+
+blockquote,
+body,
+code,
+dd,
+div,
+dl,
+dt,
+fieldset,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+legend,
+li,
+ol,
+p,
+pre,
+td,
+textarea,
+th,
+ul {
+    margin: 0;
+    padding: 0;
+    font-family: Microsoft YaHei, Arial;
+}
+
+header,
+hgroup,
+nav,
+menu,
+main,
+section,
+article,
+summary,
+details,
+aside,
+figure,
+figcaption,
+footer {
+    display: block;
+    margin: 0;
+    padding: 0
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+fieldset,
+img {
+    border: 0
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+i,
+th,
+var {
+    font-style: normal;
+    font-weight: 400
+}
+
+dl,
+ol,
+ul {
+    list-style-type: none
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: 400
+}
+
+a {
+    text-decoration: none;
+    /* blr: expression(this.onFocus=this.blur()) */
+}
+
+a:hover {
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+    outline: 0;
+    outline: none;
+    /* blr: expression(this.onFocus=this.blur()) */
+}
+
+a:focus,
+a:hover,
+a:active {
+    outline: none;
+    /* blr: expression(this.onFocus=this.blur()); */
+}
+
+sup {
+    vertical-align: text-top
+}
+
+sub {
+    vertical-align: text-bottom
+}
+
+textarea {
+    resize: none;
+    font-family: Microsoft YaHei, Arial, 方正黑体;
+}
+
+img {
+    vertical-align: middle;
+    height: auto;
+}
+
+button,
+input[type=submit],
+input[type=text],
+input[type=button] {
+    -webkit-appearance: none;
+    border-radius: 0;
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+    outline: 0;
+    /* blr: expression(this.onFocus=this.blur()); */
+    font-family: Microsoft Yahei;
+}
+
+body {
+    line-height: 1;
+    overflow-x: auto !important;
+}

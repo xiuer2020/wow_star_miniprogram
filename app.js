@@ -1,19 +1,15 @@
 // app.js
+import Toast from '@vant/weapp/toast/toast.js';
 App({
   onLaunch() {
-    // 展示本地存储能力
-    const logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
+   
   },
   globalData: {
-    userInfo: null
+   cPLg: '#2c2c2c',
+  //  主题色
+  Toast,
+  // 轻提示
+//    @c-p-lg: #2c2c2c;
+// @tabb-heig: 50px;
   }
 })
