@@ -21,10 +21,6 @@
     padding-bottom: 16px;
 }
 
-.custom-class{
-    background: #000;
-    height: 100px;
-}
 .nav-class{
     background: f005;
 }

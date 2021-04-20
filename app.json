@@ -1,9 +1,10 @@
 {
   "pages":[
 
-    "components/demo/demo",
     "pages/home/home",
-    "pages/logs/logs"
+    "pages/logs/logs",
+
+    "components/demo/demo"
   ],
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",

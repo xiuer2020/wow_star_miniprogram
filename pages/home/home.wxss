@@ -3,9 +3,7 @@
     height: 40px;
 }
 
-.custom-class{
-    background: #000;
-}
+
 
 /* .home-tabs  */
 /* 通用 */
@@ -26,5 +24,22 @@
     padding-top: 20px;
     padding-bottom: 16px;
 }
+
+.home .home-swip{
+    height: 154px;
+    background: #cccccc;
+}
+
+.home .home-swip .swip-imag{
+    width: 100%;
+    height: 100%;
+}
+
+.custom-class{
+    height: 100px;
+    background: #cccccc;
+}
+
+
 
 
