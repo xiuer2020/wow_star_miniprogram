@@ -1,45 +1,66 @@
 /* 重置 */
-.van-tabs.home-tabs .van-tabs__wrap{
+.van-tabs.home-tabs .van-tabs__wrap {
     height: 40px;
 }
 
+.tabs .tabs-nav {
+    height: 40px;
+}
+
+.tab .tabs-tab {
+    margin-top: 16px;
+}
 
 
 /* .home-tabs  */
 /* 通用 */
 /* 样式 */
-.home .home-head{
+.home {
+    padding-bottom: 48px;
+}
+
+.home .home-head {
     padding: 0 20px;
     height: 34px;
     overflow: hidden;
     /* background-image: url("../../assets/images/head-home.png"); */
 }
-.home .home-head .imag{
+
+.home .home-head .imag {
     width: 100%;
     height: 34px;
     /* 死坑死坑 */
 }
 
-.home .hoe-tabs{
+.home .hoe-tabs {
     padding-top: 20px;
     padding-bottom: 16px;
 }
 
-.home .home-swip{
+.home .home-swip {
     height: 154px;
     background: #cccccc;
 }
 
-.home .home-swip .swip-imag{
+.home .home-swip .swip-imag {
     width: 100%;
     height: 100%;
 }
 
-.custom-class{
-    height: 100px;
-    background: #cccccc;
+.home .tabs .tabs-cont {
+    padding: 16px 20px 42px;
 }
 
+.home .tabs .imag-layo {
+    height: 210px;
+}
 
+.home .tabs .tab-desc-cust {
+    padding: 12px 8px;
+    border: 1px solid #d4d4d5;
+}
 
+.home .tabs .tab-item-cust {
+    padding-top: 12px;
+}
 

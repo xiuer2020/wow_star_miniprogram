@@ -1,25 +1,27 @@
 {
-  "pages":[
-
-    "pages/home/home",
-    "pages/logs/logs",
-
-    "components/demo/demo"
-  ],
-  "usingComponents": {
-    "van-button": "@vant/weapp/button/index",
-    "van-image": "@vant/weapp/image/index",
-    "van-tabs": "@vant/weapp/tabs/index",
-    "van-tab": "@vant/weapp/tab/index",
-    "van-toast": "@vant/weapp/toast/index",
-    "demo": "./components/demo/demo"
-  },
-  
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"black"
-  },
-  "sitemapLocation": "sitemap.json"
+    "pages": [
+        "pages/home/home",
+        "pages/me/me"
+    ],
+    "usingComponents": {
+        "van-button": "@vant/weapp/button/index",
+        "van-cell-group": "@vant/weapp/cell-group/index",
+        "van-cell": "@vant/weapp/cell/index",
+        "van-icon": "@vant/weapp/icon/index",
+        "van-row": "@vant/weapp/row/index",
+        "van-col": "@vant/weapp/col/index",
+        "van-image": "@vant/weapp/image/index",
+        "van-tabs": "@vant/weapp/tabs/index",
+        "van-tab": "@vant/weapp/tab/index",
+        "van-tabbar-item": "@vant/weapp/tabbar-item/index",
+        "van-tabbar": "@vant/weapp/tabbar/index",
+        "van-toast": "@vant/weapp/toast/index"
+    },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "Weixin",
+        "navigationBarTextStyle": "black"
+    },
+    "sitemapLocation": "sitemap.json"
 }

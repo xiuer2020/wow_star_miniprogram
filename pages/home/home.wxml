@@ -1,11 +1,11 @@
 <view class="home">
-  
+
   <view class="home-head">
     <image src="../../assets/images/head-home.png" class="imag"></image>
   </view>
-  
+
   <!-- <swiper indicator-dots="{{true}}" autoplay="{{true}}" indicator-color="#ccc" class="home-swip"> -->
-  <swiper indicator-dots="{{true}}" autoplay="{{false}}" indicator-color="#ccc" class="home-swip">
+  <swiper autoplay class="home-swip">
     <swiper-item>
       <image src="../../assets/images/swip.png" class="swip-imag"></image>
     </swiper-item>
@@ -14,9 +14,57 @@
   </swiper>
 
 
-  <van-tabs custom-class="custom-class">
-    <van-tab title="标签 1">内容 1</van-tab>
-    <van-tab title="标签 2">内容 2</van-tab>
+  <van-tabs nav-class="tabs-nav" tab-class="tabs-tab" color="{{cPLg}}" line-width="{{26}}" class="tabs">
+    <van-tab title="最新上架">
+      <view class="tabs-cont">
+        <van-row gutter="8">
+          <van-col span="12">
+            <view class="imag-layo">
+              <image src="../../assets/images/item-tab.png" class="imag"></image>
+            </view>
+            <van-cell custom-class="tab-desc-cust" use-label-slot border="{{false}}">
+              <view slot="title">刘一含 | 开到花期</view>
+              <view slot="label">销量 2794</view>
+            </van-cell>
+          </van-col>
+          <van-col span="12">
+            <view class="imag-layo">
+              <image src="../../assets/images/item-tab.png" class="imag"></image>
+            </view>
+            <van-cell custom-class="tab-desc-cust" use-label-slot border="{{false}}">
+              <view slot="title">刘一含 | 开到花期</view>
+              <view slot="label">销量 2794</view>
+            </van-cell>
+          </van-col>
+          <van-col span="12" custom-class="tab-item-cust">
+            <view class="imag-layo">
+              <image src="../../assets/images/item-tab.png" class="imag"></image>
+            </view>
+            <van-cell custom-class="tab-desc-cust" use-label-slot border="{{false}}">
+              <view slot="title">刘一含 | 开到花期</view>
+              <view slot="label">销量 2794</view>
+            </van-cell>
+          </van-col>
+        </van-row>
+      </view>
+    </van-tab>
+    <van-tab title="《漫游》">{{cPLg}}</van-tab>
+    <van-tab title="《1626》">内</van-tab>
   </van-tabs>
+
+
+  <van-tabbar active="{{footTabbInde}}" fixed="{{true}}" active-color="{{cPLg}}" bind:change="naviTo">
+    <van-tabbar-item>
+      我的
+      <text class="iconfont icon-shouye" slot="icon"></text>
+      <text class="iconfont icon-index-copy" slot="icon-active"></text>
+     
+    </van-tabbar-item>
+    <van-tabbar-item>
+      首页
+      <text class="iconfont icon-my" slot="icon"></text>
+      <text class="iconfont icon-wode" slot="icon-active"></text>
+    </van-tabbar-item>
+  </van-tabbar>
 
 </view>

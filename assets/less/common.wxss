@@ -377,3 +377,7 @@
 .mb-xl {
   margin-bottom: 32px;
 }
+
+.bdc-md{
+  border-color: #d4d4d5;
+}

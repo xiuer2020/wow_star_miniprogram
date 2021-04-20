@@ -17,3 +17,4 @@
     <slot />
   </view>
 </view>
+<!-- custom-class -->
