@@ -130,7 +130,7 @@
 }
 /* 三临近色 */
 .c-p-lg {
-  color: #638ee3;
+  color: #0d0d0d;
 }
 .c-p-md {
   color: #fde7d0;
@@ -186,13 +186,13 @@
 }
 /* 四临近色  */
 .c-text-lg {
-  color: #303133;
+  color: #0d0d0d;
 }
 .c-text-md {
-  color: #606266;
+  color: #323232;
 }
 .c-text-sm {
-  color: #909399;
+  color: #8d9096;
 }
 .c-text-xs {
   color: #c0c4cc;

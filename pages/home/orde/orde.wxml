@@ -1,0 +1,19 @@
+<view class="orde app-page">
+
+    <van-nav-bar bind:click-left="navBarClickLeft" fixed border="{{false}}" safe-area-inset-top class="page-nav-bar">
+        <view slot="left">
+            <text class="iconfont icon-houtui pr-sm"></text>
+            <text class="text">确认订单</text>
+        </view>
+    </van-nav-bar>
+
+    <view class="main">
+        <van-cell border="{{false}}" is-link>
+            <view slot="title">
+                <text class="iconfont icon-qianjin pr-xs"></text>
+                请设置收获地址
+            </view>
+        </van-cell>
+    </view>
+
+</view>

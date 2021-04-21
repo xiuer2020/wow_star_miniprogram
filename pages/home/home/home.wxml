@@ -1,14 +1,13 @@
-<view class="home">
+<view class="home app-page">
 
   <view class="home-head">
-    <image src="../../assets/images/head-home.png" class="imag"></image>
+    <image src="/assets/images/head-home.png" class="imag"></image>
   </view>
 
-  <!-- <swiper indicator-dots="{{true}}" autoplay="{{true}}" indicator-color="#ccc" class="home-swip"> -->
-  <swiper autoplay class="home-swip">
+  <swiper indicator-dots="{{true}}" autoplay="{{true}}" indicator-color="#ccc" class="home-swip">
     <swiper-item>
-      <image src="../../assets/images/swip.png" class="swip-imag"></image>
-    </swiper-item>
+      <image src="/assets/images/swip.png" class="swip-imag"></image>
+    </swiper-item> 
     <swiper-item>2</swiper-item>
     <swiper-item>3</swiper-item>
   </swiper>
@@ -18,9 +17,9 @@
     <van-tab title="最新上架">
       <view class="tabs-cont">
         <van-row gutter="8">
-          <van-col span="12">
+          <van-col span="12" bind:tap="toGoodDeta">
             <view class="imag-layo">
-              <image src="../../assets/images/item-tab.png" class="imag"></image>
+              <image src="/assets/images/item-tab.png" class="imag"></image>
             </view>
             <van-cell custom-class="tab-desc-cust" use-label-slot border="{{false}}">
               <view slot="title">刘一含 | 开到花期</view>
@@ -29,7 +28,7 @@
           </van-col>
           <van-col span="12">
             <view class="imag-layo">
-              <image src="../../assets/images/item-tab.png" class="imag"></image>
+              <image src="/assets/images/item-tab.png" class="imag"></image>
             </view>
             <van-cell custom-class="tab-desc-cust" use-label-slot border="{{false}}">
               <view slot="title">刘一含 | 开到花期</view>
@@ -38,7 +37,7 @@
           </van-col>
           <van-col span="12" custom-class="tab-item-cust">
             <view class="imag-layo">
-              <image src="../../assets/images/item-tab.png" class="imag"></image>
+              <image src="/assets/images/item-tab.png" class="imag"></image>
             </view>
             <van-cell custom-class="tab-desc-cust" use-label-slot border="{{false}}">
               <view slot="title">刘一含 | 开到花期</view>
@@ -53,7 +52,7 @@
   </van-tabs>
 
 
-  <van-tabbar active="{{footTabbInde}}" fixed="{{true}}" active-color="{{cPLg}}" bind:change="naviTo">
+  <van-tabbar active="{{footTabbInde}}" fixed="{{true}}" border="{{false}}" active-color="{{cPLg}}" bind:change="naviTo">
     <van-tabbar-item>
       我的
       <text class="iconfont icon-shouye" slot="icon"></text>

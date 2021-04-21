@@ -1,0 +1,35 @@
+/* 通用样式 */
+.me{
+    padding-top: 66px;
+    padding-bottom: 50px;
+}
+.page-nav-bar{
+    padding-top: 0;
+}
+
+/* .me .page-nav-bar .text{ */
+.me .page-nav-bar .text{
+    font-size: 16px;
+}
+
+
+/* 样式 */
+
+.me .head-port-layo{
+    padding-top: 30px;
+    padding-bottom: 44px;
+}
+
+.me .head-port-layo .head-port{
+   width: 74px;
+   height: 74px;
+   background: #ccc;
+   border-radius: 50%;
+}
+
+.me .cell-group .cell{
+   padding: 0 20px 32px;
+}
+.me .cell-group .last-cell{
+   padding: 0 20px;
+}

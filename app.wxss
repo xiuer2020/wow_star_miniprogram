@@ -6,6 +6,8 @@ image{
   height: 100%;
 }
 
+
 .app-page{
   font-size: 14px;
+  color: #282828;
 }

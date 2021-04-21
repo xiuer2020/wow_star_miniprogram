@@ -1,0 +1,97 @@
+<view class="good app-page">
+
+
+
+    <van-nav-bar bind:click-left="navBarClickLeft" fixed border="{{false}}" safe-area-inset-top 
+        class="page-nav-bar">
+        <view slot="left">
+            <text class="iconfont icon-houtui pr-sm"></text>
+            <text class="text">商品详情</text>
+        </view>
+    </van-nav-bar>
+
+    <view class="deta-imag-layo">
+        <image src="/assets/images/good-deta.png"></image>
+    </view>
+
+    <van-row custom-class="btn-layo-cust" gutter="12" class="btn-layo">
+        <van-col span="12">
+            <van-button color="#000000" block bind:tap="enteRankList">排行榜</van-button>
+        </van-col>
+        <van-col span="12">
+            <van-button color="#000000" block plain bind:tap="Toast">倒计时</van-button>
+        </van-col>
+    </van-row>
+
+    <view class="main">
+        <view class="titl">
+            唐小天<text> | </text>作为演员
+        </view>
+        <view class="labe c-text-md pt-xs">已售出916套</view>
+        <view class="desc c-text-sm">desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc
+            desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc
+            desc desc desc desc desc desc desc desc desc desc desc desc desc </view>
+    </view>
+
+    <view class="encl">
+
+    </view>
+
+    <view class="foot-btn-layo">
+        <van-button color="#000000" block class="fx1 mr-xs" bind:tap="buyGood">立即购买</van-button>
+        <van-button color="#000000" block plain class="fx1" bind:tap="Toast">排行榜</van-button>
+    </view>
+
+
+    <van-popup show="{{ orderShow }}" close-on-click-overlay closeable bind:close="popuOverClic" position="bottom"
+        bind:click-overlay="popuOverClic" class="comf">
+        <view class="head">
+            唐小天 | 作为演员
+        </view>
+
+        <van-cell>
+            <view slot="title">
+                <text class="iconfont icon-my pr8"></text>
+                请设置收获地址
+            </view>
+        </van-cell>
+        <van-cell>
+            <view slot="title">
+                <text class="iconfont icon-my pr8"></text>
+                请设置收获地址
+            </view>
+        </van-cell>
+        <van-cell>
+            <view slot="title">
+                <text class="iconfont icon-my pr8"></text>
+                请设置收获地址
+            </view>
+        </van-cell>
+        <van-cell>
+            <view slot="title">
+                <text class="iconfont icon-my pr8"></text>
+                请设置收获地址
+            </view>
+        </van-cell>
+        <van-cell border="{{false}}">
+            <view slot="title">
+                <text class="iconfont icon-my pr8"></text>
+                请设置收获地址
+            </view>
+        </van-cell>
+        <view class="more base-flex van-hairline--top">
+            <view class="inpu-layo fx1 base-flex aic">
+                <input type="number" model:value="{{price}}" placeholder="其他套数" />
+            </view>
+            <view class="price-valu fx1">
+                {{price*100}}￥
+            </view>
+        </view>
+        <view class="popu-btn-layo">
+            <van-button color="#000000" block bind:tap="toOrde">立即购买</van-button>
+        </view>
+
+    </van-popup>
+
+    <van-toast id="van-toast" selector="#van-toast">{{toasMass}}</van-toast>
+</view>

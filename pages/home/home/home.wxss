@@ -17,6 +17,7 @@
 /* 样式 */
 .home {
     padding-bottom: 48px;
+    padding-top: 46px;
 }
 
 .home .home-head {
@@ -56,7 +57,7 @@
 }
 
 .home .tabs .tab-desc-cust {
-    padding: 12px 8px;
+    padding: 8px;
     border: 1px solid #d4d4d5;
 }
 

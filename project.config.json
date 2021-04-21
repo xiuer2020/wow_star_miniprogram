@@ -6,23 +6,24 @@
     "setting": {
         "urlCheck": false,
         "es6": true,
-        "enhance": false,
-        "postcss": true,
+        "enhance": true,
+        "postcss": false,
         "preloadBackgroundData": false,
-        "minified": true,
+        "minified": false,
         "newFeature": false,
         "coverView": true,
         "nodeModules": true,
         "autoAudits": false,
-        "showShadowRootInWxmlPanel": true,
+        "showShadowRootInWxmlPanel": false,
         "scopeDataCheck": false,
         "uglifyFileName": false,
         "checkInvalidKey": true,
         "checkSiteMap": true,
         "uploadWithSourceMap": true,
-        "compileHotReLoad": false,
+        "compileHotReLoad": true,
         "useMultiFrameRuntime": true,
         "useApiHook": true,
+        "useApiHostProcess": false,
         "babelSetting": {
             "ignore": [],
             "disablePlugins": [],
@@ -40,8 +41,7 @@
                 "miniprogramNpmDistDir": "./"
             }
         ],
-        "minifyWXSS": true,
-        "useApiHostProcess": false
+        "minifyWXSS": false
     },
     "compileType": "miniprogram",
     "libVersion": "2.16.0",

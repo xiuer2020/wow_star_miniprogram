@@ -1,0 +1,37 @@
+<view class="me app-page">
+    <van-nav-bar fixed border="{{false}}" class="page-nav-bar">
+        <view class="page-nav-bar-left" slot="left">
+            <text class="text">个人中心</text>
+        </view>
+    </van-nav-bar>
+
+    <view class="head-port-layo base-flex aic fxdc">
+        <!-- <image src="../../assets/images/head-port.png" class="head-port"></image> -->
+        <view class="head-port"></view>
+        <text class="pt-base">9979</text>
+    </view>
+
+    <view class="cell-group">
+        <van-cell title="我的订单" border="{{false}}" is-link custom-class="cell"></van-cell>
+        <van-cell title="我的订单" border="{{false}}" is-link custom-class="cell"></van-cell>
+        <van-cell title="我的订单" border="{{false}}" is-link custom-class="cell"></van-cell>
+        <van-cell title="我的订单" border="{{false}}" is-link custom-class="last-cell"></van-cell>
+    </view>
+
+
+
+    <van-tabbar active="{{footTabbInde}}" fixed="{{true}}" border="{{false}}" active-color="{{cPLg}}"
+        bind:change="naviTo">
+        <van-tabbar-item>
+            我的
+            <text class="iconfont icon-shouye" slot="icon"></text>
+            <text class="iconfont icon-index-copy" slot="icon-active"></text>
+
+        </van-tabbar-item>
+        <van-tabbar-item>
+            首页
+            <text class="iconfont icon-my" slot="icon"></text>
+            <text class="iconfont icon-wode" slot="icon-active"></text>
+        </van-tabbar-item>
+    </van-tabbar>
+</view>

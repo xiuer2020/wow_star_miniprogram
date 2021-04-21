@@ -1,0 +1,86 @@
+/* 通用样式 */
+
+.good .page-nav-bar .text {
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.good .page-nav-bar .icon-houtui {
+    vertical-align: middle;
+}
+
+/* 样式 */
+.good{
+    padding-top: 66px;
+    padding-bottom: 60px;
+}
+.good .deta-imag-layo {
+    margin: 0 20px;
+    height: 404px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.good .btn-layo-cust{
+    padding: 12px 20px 28px;
+}
+
+.good .main{
+    padding: 0 20px;
+}
+
+.good .main .titl{
+    font-size: 16px;
+}
+.good .main .labe{
+    padding-bottom: 8px;
+}
+
+.good .main .desc{
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.good .encl{
+    height: 840px;
+    margin: 22px 20px 0;
+    background: #cccccc;
+}
+
+.good .foot-btn-layo{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+}
+
+.good .comf .head{  
+    padding: 20px 0 4px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.good .comf .more{
+    margin: 18px 42px;
+    border: 1px solid #000;
+}
+.good .comf .inpu-layo{
+    margin: 4px 20px;
+    height: 44px;
+    line-height: 44px;
+    border-right: 1px solid #000;
+}
+
+.good .comf .price-valu{
+    text-align: right;
+    height: 54px;
+    line-height: 54px;
+    padding-right: 20px;
+}
+
+.good .comf .popu-btn-layo{
+    margin: 18px 32px;
+}

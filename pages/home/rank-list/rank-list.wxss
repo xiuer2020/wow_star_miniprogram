@@ -1,0 +1,52 @@
+/* 通用样式 */
+.rank-list{
+    padding-top: 66px;
+}
+.rank-list .page-nav-bar .text {
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.rank-list .page-nav-bar .icon-houtui {
+    vertical-align: middle;
+}
+
+/* 样式 */
+.rank-list .top-thre{
+    text-align: center;
+    padding: 0 20px;
+}
+.rank-list .top-thre .item{
+    padding: 16px 0 12px;
+    box-shadow: 0px 0px 1px 1px #f5f4f4;
+}
+
+.rank-list .top-thre .titl{
+    font-size: 16px;
+}
+
+.rank-list .top-thre .imag-layo{
+    margin-top: 8px;
+    margin-bottom: 16px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #cccccc;
+}
+
+.rank-list .list{
+    padding: 16px 20px;
+}
+
+.rank-list .list .item{
+    height: 52px;
+}
+
+.rank-list .list .imag-layo{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #cccccc;
+}
