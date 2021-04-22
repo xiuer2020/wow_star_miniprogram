@@ -1,0 +1,14 @@
+<view class="post-pay app-page">
+    <van-nav-bar bind:click-left="navBarClickLeft" fixed border="{{false}}" class="page-nav-bar">
+        <view slot="left">
+            <text class="iconfont icon-houtui pr-sm"></text>
+            <text class="text">邮费补缴</text>
+        </view>
+    </van-nav-bar>
+    <van-field label="邮费" type="number" placeholder="请输入补缴金额" custom-class="field"></van-field>
+    <view bind:tap="addAddr" class="add-butt-layo"
+        style="position:fixed; left: 0; bottom: 0; box-sizing: border-box; padding: 8px; width:100%;">
+        <van-button color="{{cPLg}}" block bind:tap="Toast">微信支付</van-button>
+    </view>
+    <van-toast selector="#van-toast" id="van-toast">未定义</van-toast>
+</view>

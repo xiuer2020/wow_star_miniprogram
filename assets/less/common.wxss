@@ -118,6 +118,69 @@
 .fx3 {
   flex: 3;
 }
+.fx4 {
+  flex: 4;
+}
+.fx5 {
+  flex: 5;
+}
+.fx6 {
+  flex: 6;
+}
+.fx7 {
+  flex: 7;
+}
+.fx8 {
+  flex: 8;
+}
+.fx9 {
+  flex: 9;
+}
+.fx10 {
+  flex: 10;
+}
+.fx11 {
+  flex: 11;
+}
+.fx12 {
+  flex: 12;
+}
+.fx13 {
+  flex: 13;
+}
+.fx14 {
+  flex: 14;
+}
+.fx15 {
+  flex: 15;
+}
+.fx16 {
+  flex: 16;
+}
+.fx17 {
+  flex: 17;
+}
+.fx18 {
+  flex: 18;
+}
+.fx19 {
+  flex: 19;
+}
+.fx20 {
+  flex: 20;
+}
+.fx21 {
+  flex: 21;
+}
+.fx22 {
+  flex: 22;
+}
+.fx23 {
+  flex: 23;
+}
+.fx24 {
+  flex: 24;
+}
 /*盒子次序*/
 .order1 {
   order: 1;
@@ -175,10 +238,10 @@
   color: #f4f4f5;
 }
 /*基础背景三色*/
-.black {
+.c-black {
   color: #000000;
 }
-.white {
+.c-white {
   color: #ffffff;
 }
 .c-bg-tranparent {

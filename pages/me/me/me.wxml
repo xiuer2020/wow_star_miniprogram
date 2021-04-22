@@ -4,34 +4,16 @@
             <text class="text">个人中心</text>
         </view>
     </van-nav-bar>
-
     <view class="head-port-layo base-flex aic fxdc">
         <!-- <image src="../../assets/images/head-port.png" class="head-port"></image> -->
         <view class="head-port"></view>
         <text class="pt-base">9979</text>
     </view>
-
     <view class="cell-group">
-        <van-cell title="我的订单" border="{{false}}" is-link custom-class="cell"></van-cell>
-        <van-cell title="我的订单" border="{{false}}" is-link custom-class="cell"></van-cell>
-        <van-cell title="我的订单" border="{{false}}" is-link custom-class="cell"></van-cell>
-        <van-cell title="我的订单" border="{{false}}" is-link custom-class="last-cell"></van-cell>
+        <van-cell title="我的订单" border="{{false}}" is-link  bind:tap="naviOrde" custom-class="cell"></van-cell>
+        <van-cell title="我的收获地址" border="{{false}}" is-link bind:tap="naviAddr"  custom-class="cell"></van-cell>
+        <van-cell title="意见反馈" border="{{false}}" is-link  bind:tap="naviFeed" custom-class="cell"></van-cell>
+        <van-cell title="邮费补缴" border="{{false}}" is-link  bind:tap="naviPostPay" custom-class="cell"></van-cell>
     </view>
-
-
-
-    <van-tabbar active="{{footTabbInde}}" fixed="{{true}}" border="{{false}}" active-color="{{cPLg}}"
-        bind:change="naviTo">
-        <van-tabbar-item>
-            我的
-            <text class="iconfont icon-shouye" slot="icon"></text>
-            <text class="iconfont icon-index-copy" slot="icon-active"></text>
-
-        </van-tabbar-item>
-        <van-tabbar-item>
-            首页
-            <text class="iconfont icon-my" slot="icon"></text>
-            <text class="iconfont icon-wode" slot="icon-active"></text>
-        </van-tabbar-item>
-    </van-tabbar>
+    <van-toast selector="#van-toast" id="van-toast">未定义</van-toast>
 </view>

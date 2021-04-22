@@ -1,7 +1,6 @@
 const app = getApp();
 // pages/me/me.js
 Page({
-
     /**
      * 页面的初始数据
      */
@@ -11,7 +10,6 @@ Page({
         cPLg: null
         // 主题色
     },
-
     Toast: app.globalData.Toast,
     naviTo: function (e) {
         switch (e.detail) {
@@ -27,10 +25,34 @@ Page({
         }
     },
     // 底部选项栏导航
-
-
-    // 进入商品详情
-
+    naviOrde: function(){
+        console.log('ente');
+        wx.reLaunch({
+          url: '/pages/me/orde/orde',
+        })
+    },
+    // 进入我的订单
+    naviAddr: function(){
+        console.log('ente');
+        wx.reLaunch({
+          url: '/pages/me/addr/addr',
+        })
+    },
+    // 进入我的地址
+    naviFeed: function(){
+        console.log('ente');
+        wx.reLaunch({
+          url: '/pages/me/feed/feed',
+        })
+    },
+    // 进入意见反馈
+    naviPostPay: function(){
+        console.log('ente');
+        wx.reLaunch({
+          url: '/pages/me/post-pay/post-pay',
+        })
+    },
+    // 进入邮费补缴
     /**
      * 生命周期函数--监听页面加载
      */

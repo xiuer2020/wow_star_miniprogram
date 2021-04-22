@@ -1,13 +1,11 @@
 <view class="rank-list app-page">
-    <van-nav-bar bind:click-left="navBarClickLeft" border="{{false}}" fixed
-        class="page-nav-bar">
+    <van-nav-bar bind:click-left="navBarClickLeft" border="{{false}}" fixed class="page-nav-bar">
         <view slot="left">
             <text class="iconfont icon-houtui pr-sm"></text>
             <text class="text">排行榜</text>
         </view>
     </van-nav-bar>
-
-    <view class="top-thre base-flex">
+    <view class="top-thre base-flex mt-xs">
         <view class="item fx1 mr-sm base-flex fxdc aic">
             <view class="titl">No.1</view>
             <view class="imag-layo"></view>
@@ -27,7 +25,6 @@
             <view class="c-text-sm pt-xs">21套</view>
         </view>
     </view>
-
     <view class="list">
         <view class="item base-flex jcsb aic">
             <view class="base-flex aic">
@@ -61,8 +58,5 @@
             </view>
             <view class="numb c-text-sm">20套</view>
         </view>
-      
     </view>
-
-
 </view>

@@ -1,0 +1,14 @@
+<view class="logi">
+    <van-nav-bar bind:click-left="navBarClickLeft" fixed border="{{false}}" safe-area-inset-top class="page-nav-bar">
+        <view slot="left">
+            <text class="iconfont icon-houtui pr-sm"></text>
+            <text class="text">哇哦星球wowstar</text>
+        </view>
+    </van-nav-bar>
+    <van-empty description="需要获取您的头像和昵称" custom-class="empt-cust" class="empt">
+        <view class="logi-btn-layo" bind:tap="popuShow">
+            <van-button color="#07c160" custom-class="empt-btn-cust" bind:tap="logi">微信授权登录</van-button>
+        </view>
+    </van-empty>
+    <van-toast id="van-toast" selector="#van-toast">未定义</van-toast>
+</view>

@@ -17,7 +17,7 @@
 
 .me .head-port-layo{
     padding-top: 30px;
-    padding-bottom: 44px;
+    padding-bottom: 28px;
 }
 
 .me .head-port-layo .head-port{
@@ -28,8 +28,5 @@
 }
 
 .me .cell-group .cell{
-   padding: 0 20px 32px;
-}
-.me .cell-group .last-cell{
-   padding: 0 20px;
+   padding: 16px 20px;
 }

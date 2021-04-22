@@ -1,10 +1,19 @@
 const app = getApp();
 Page({
   data: {
-    footTabbInde: 0
+    footTabbInde: 0,
     // 底部选项栏下标
+    indiText: '1',
+    // 轮播图指示文字
+    cPLg: app.globalData.cPLg,
   },
   Toast: app.globalData.Toast,
+  swipChan: function(e){
+    this.setData({
+      indiText: `${e.detail.current+1}`
+    })
+  },
+  // 轮播图切换
   naviTo: function (e) {
     switch (e.detail) {
       case 0:
@@ -19,7 +28,6 @@ Page({
     }
   },
   // 底部选项栏导航
-
   toGoodDeta: function (para) {
     console.log(para);
     wx.reLaunch({
@@ -27,10 +35,7 @@ Page({
     })
   },
   // 进入商品详情
-
   onShow() {
-    this.setData({
-      cPLg: app.globalData.cPLg
-    })
+
   }
 })

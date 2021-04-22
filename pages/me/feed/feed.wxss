@@ -1,0 +1,28 @@
+/* 通用样式 */
+.page-nav-bar .text {
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.page-nav-bar .icon-houtui {
+    vertical-align: middle;
+}
+
+/* 样式 */
+.feed {
+    padding-top: 66px;
+}
+
+.feed-text-layo {
+    margin-top: 8px;
+    padding: 0px 20px;
+}
+
+.feed-text-layo .feed-text {
+    border: 1px solid #d2d2d2;
+    width: 100%;
+    height: 168px;
+    box-sizing: border-box;
+    /* margin: 0 20px; */
+    padding: 8px;
+}

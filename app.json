@@ -1,14 +1,24 @@
 {
     "pages": [
-        "pages/home/orde/orde",
-        "pages/home/rank-list/rank-list",
-        "pages/home/good/good",
         "pages/home/home/home",
+        "pages/home/rank-list/rank-list",
+        "pages/me/feed/feed",
+        "pages/me/post-pay/post-pay",
+        "pages/me/addr/addr",
+        "pages/me/add-addr/add-addr",
         "pages/me/me/me",
+        "pages/me/orde/orde",
+        "pages/home/orde/orde",
+        "pages/logi/logi",
+        "pages/home/good/good",
         "pages/demo/demo"
     ],
     "usingComponents": {
+        "van-switch": "@vant/weapp/switch/index",
+        "van-field": "@vant/weapp/field/index",
         "van-button": "@vant/weapp/button/index",
+        "van-radio-group": "@vant/weapp/radio-group/index",
+        "van-radio": "@vant/weapp/radio/index",
         "van-cell-group": "@vant/weapp/cell-group/index",
         "van-cell": "@vant/weapp/cell/index",
         "van-icon": "@vant/weapp/icon/index",
@@ -21,6 +31,7 @@
         "van-tabbar": "@vant/weapp/tabbar/index",
         "van-nav-bar": "@vant/weapp/nav-bar/index",
         "van-popup": "@vant/weapp/popup/index",
+        "van-empty": "@vant/weapp/empty/index",
         "van-toast": "@vant/weapp/toast/index"
     },
     "window": {
@@ -29,6 +40,26 @@
         "navigationBarTitleText": "Weixin",
         "navigationBarTextStyle": "black",
         "navigationStyle": "custom"
+    },
+    "tabBar": {
+        "color": "#8d9096",
+        "selectedColor": "#0d0d0d",
+        "backgroundColor": "#fff",
+        "borderStyle": "white",
+        "list": [
+            {
+                "pagePath": "pages/home/home/home",
+                "text": "首页",
+                "iconPath": "assets/images/shouye.png",
+                "selectedIconPath": "assets/images/index-copy.png"
+            },
+            {
+                "pagePath": "pages/me/me/me",
+                "text": "我的",
+                "iconPath": "assets/images/wode.png",
+                "selectedIconPath": "assets/images/sele-wode.png"
+            }
+        ]
     },
     "sitemapLocation": "sitemap.json"
 }

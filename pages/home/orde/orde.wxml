@@ -1,19 +1,89 @@
 <view class="orde app-page">
-
     <van-nav-bar bind:click-left="navBarClickLeft" fixed border="{{false}}" safe-area-inset-top class="page-nav-bar">
         <view slot="left">
             <text class="iconfont icon-houtui pr-sm"></text>
             <text class="text">确认订单</text>
         </view>
     </van-nav-bar>
-
-    <view class="main">
-        <van-cell border="{{false}}" is-link>
-            <view slot="title">
-                <text class="iconfont icon-qianjin pr-xs"></text>
-                请设置收获地址
+    <van-cell border="{{false}}" is-link custom-class="modu-cell" class="addr">
+        <view slot="title">
+            <text class="iconfont icon-qianjin pr-xs"></text>
+            请设置收获地址
+        </view>
+    </van-cell>
+    <view class="roug base-flex" style="margin: 0 20px; padding: 8px; background: #fafafa;">
+        <view class="imag-layo fx1 mr-sm" style="height: 88px; background: #ccc;"></view>
+        <view class="base-flex fx4 fxdc jcsb">
+            <view class="titl">唐晓天 | 作为演员</view>
+            <view class="base-flex jcsb">
+                <text>￥40</text>
+                <text>x 1套</text>
             </view>
-        </van-cell>
+        </view>
     </view>
-
+    <van-cell border="{{false}}" custom-class="modu-cell" class="norm">
+        <view slot="title">
+            普通快递￥12
+        </view>
+        <van-radio-group value="{{ mailType }}" bind:change="mailTypeUpda">
+            <van-radio checked-color="{{cPLg}}" name="普通快递" custom-class="radi-cust"></van-radio>
+        </van-radio-group>
+    </van-cell>
+    <van-cell use-label-slot title-class="title-class" custom-class="modu-cell" class="sf">
+        <view slot="title">
+            顺丰到付
+        </view>
+        <view slot="label">
+            推荐购买10套以上， 选择到付或者联系客服
+        </view>
+        <van-radio-group value="{{ mailType }}" bind:change="mailTypeUpda">
+            <van-radio checked-color="{{cPLg}}" name="顺丰到付" custom-class="radi-cust"></van-radio>
+        </van-radio-group>
+    </van-cell>
+    <van-cell custom-class="modu-cell" class="no-retu" use-label-slot>
+        <view slot="title">
+            不寄回
+        </view>
+        <view slot="label">
+            如果无需寄回请选择此项
+        </view>
+        <van-radio-group value="{{ mailType }}" bind:change="mailTypeUpda">
+            <van-radio checked-color="{{cPLg}}" name="不寄回" custom-class="radi-cust"></van-radio>
+        </van-radio-group>
+    </van-cell>
+    <van-cell title="总计" value="￥52" custom-class="modu-cell" class="tota">
+    </van-cell>
+    <van-cell custom-class="modu-cell" class="buy-intro-cell">
+        <view slot="title" bind:tap="buyIntrShow">
+            <text class="iconfont icon-qianjin pr-base"></text>
+            <text>购买说明</text>
+        </view>
+    </van-cell>
+    <van-popup show="{{buyIntrShowStat}}" custom-class="buy-intr-cust" class="buy-intr">
+        <view style="text-align:center;">购买说明</view>
+        <view class="buy-intr-list" style="padding: 8px 24px 16px;color:#323232;">
+            <view class="item" style="line-height: 20px">
+                1、预售商品会在预售期截止后2至4周内发货，请您耐心等候
+            </view>
+            <view class="item" style="line-height: 20px">
+                1、预售商品会在预售期截止后2至4周内发货，请您耐心等候
+            </view>
+            <view class="item" style="line-height: 20px">
+                1、预售商品会在预售期截止后2至4周内发货，请您耐心等候
+            </view>
+            <view class="item" style="line-height: 20px">
+                1、预售商品会在预售期截止后2至4周内发货，请您耐心等候
+            </view>
+            <view class="item" style="line-height: 20px">
+                1、预售商品会在预售期截止后2至4周内发货，请您耐心等候
+            </view>
+            <view class="item" style="line-height: 20px">
+                1、预售商品会在预售期截止后2至4周内发货，请您耐心等候
+            </view>
+        </view>
+        <van-button block custom-class="cofi-butt" bind:tap="buyIntrClos">确认</van-button>
+    </van-popup>
+    <view class="foot-btn-layo">
+        <van-button block color="{{cPLg}}" bind:click="login">微信支付</van-button>
+    </view>
 </view>

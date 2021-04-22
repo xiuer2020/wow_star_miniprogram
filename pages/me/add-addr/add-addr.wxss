@@ -1,0 +1,18 @@
+/* 通用样式 */
+.page-nav-bar .text {
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.van-field.field{
+    padding: 16px 20px;   
+}
+
+.page-nav-bar .icon-houtui {
+    vertical-align: middle;
+}
+
+/* 样式 */
+.add-addr {
+    padding-top: 66px;
+}
