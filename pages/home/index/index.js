@@ -28,10 +28,9 @@ Page({
     }
   },
   // 底部选项栏导航
-  toGoodDeta: function (para) {
-    console.log(para);
+  toGoodDeta: function (e) {
     wx.reLaunch({
-      url: '/pages/home/good/good'
+      url: '/pages/home/good/good?temp=temp'
     })
   },
   // 进入商品详情

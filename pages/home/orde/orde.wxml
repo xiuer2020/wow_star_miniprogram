@@ -5,9 +5,9 @@
             <text class="text">确认订单</text>
         </view>
     </van-nav-bar>
-    <van-cell border="{{false}}" is-link custom-class="modu-cell" class="addr">
+    <van-cell border="{{false}}" is-link custom-class="modu-cell" bind:tap="setAddr" class="addr">
         <view slot="title">
-            <text class="iconfont icon-qianjin pr-xs"></text>
+            <text class="iconfont icon-iconset0391 pr-base"></text>
             请设置收获地址
         </view>
     </van-cell>
@@ -53,31 +53,28 @@
     </van-cell>
     <van-cell title="总计" value="￥52" custom-class="modu-cell" class="tota">
     </van-cell>
-    <van-cell custom-class="modu-cell" class="buy-intro-cell">
-        <view slot="title" bind:tap="buyIntrShow">
-            <text class="iconfont icon-qianjin pr-base"></text>
+    <van-cell border="{{false}}" custom-class="modu-cell" class="buy-intro-cell">
+        <view slot="title" bind:tap="buyIntrShow" class="c-text-sm">
+            <text class="iconfont icon-shuoming pr-base"></text>
             <text>购买说明</text>
         </view>
     </van-cell>
     <van-popup show="{{buyIntrShowStat}}" custom-class="buy-intr-cust" class="buy-intr">
         <view style="text-align:center;">购买说明</view>
         <view class="buy-intr-list" style="padding: 8px 24px 16px;color:#323232;">
-            <view class="item" style="line-height: 20px">
+            <view class="item" style="line-height: 24px">
                 1、预售商品会在预售期截止后2至4周内发货，请您耐心等候
             </view>
-            <view class="item" style="line-height: 20px">
+            <view class="item" style="line-height: 24px">
                 1、预售商品会在预售期截止后2至4周内发货，请您耐心等候
             </view>
-            <view class="item" style="line-height: 20px">
+            <view class="item" style="line-height: 24px">
                 1、预售商品会在预售期截止后2至4周内发货，请您耐心等候
             </view>
-            <view class="item" style="line-height: 20px">
+            <view class="item" style="line-height: 24px">
                 1、预售商品会在预售期截止后2至4周内发货，请您耐心等候
             </view>
-            <view class="item" style="line-height: 20px">
-                1、预售商品会在预售期截止后2至4周内发货，请您耐心等候
-            </view>
-            <view class="item" style="line-height: 20px">
+            <view class="item" style="line-height: 24px">
                 1、预售商品会在预售期截止后2至4周内发货，请您耐心等候
             </view>
         </view>

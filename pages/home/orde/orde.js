@@ -11,6 +11,12 @@ Page({
     buyIntrShowStat: false,
     // 购买说明
   },
+  setAddr: function(){
+    wx.reLaunch({
+      url: '/pages/me/add-addr/add-addr',
+    })
+  },
+  // 设置收货地址
   navBarClickLeft: function () {
     wx.reLaunch({
       url: '/pages/home/good/good',

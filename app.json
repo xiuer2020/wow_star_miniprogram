@@ -1,14 +1,16 @@
 {
     "pages": [
-        "pages/home/home/home",
+        "pages/pageA/pageA",
+        "pages/pageB/pageB",
+        "pages/home/index/index",
+        "pages/home/orde/orde",
+        "pages/me/orde/orde",
         "pages/home/rank-list/rank-list",
         "pages/me/feed/feed",
         "pages/me/post-pay/post-pay",
         "pages/me/addr/addr",
         "pages/me/add-addr/add-addr",
-        "pages/me/me/me",
-        "pages/me/orde/orde",
-        "pages/home/orde/orde",
+        "pages/me/index/index",
         "pages/logi/logi",
         "pages/home/good/good",
         "pages/demo/demo"
@@ -48,13 +50,13 @@
         "borderStyle": "white",
         "list": [
             {
-                "pagePath": "pages/home/home/home",
+                "pagePath": "pages/home/index/index",
                 "text": "首页",
                 "iconPath": "assets/images/shouye.png",
                 "selectedIconPath": "assets/images/index-copy.png"
             },
             {
-                "pagePath": "pages/me/me/me",
+                "pagePath": "pages/me/index/index",
                 "text": "我的",
                 "iconPath": "assets/images/wode.png",
                 "selectedIconPath": "assets/images/sele-wode.png"

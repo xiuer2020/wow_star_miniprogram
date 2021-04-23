@@ -4,7 +4,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-        cPLg: null,
+        temp: null,
+        cPLg: app.globalData.cPLg,
         // 主题色
         orderShow: false,
         // 订单展示状态
@@ -22,13 +23,14 @@ Page({
     },
     // 数量更新
     enteRankList: function () {
-        wx.reLaunch({
+        // wx.reLaunch({
+        wx.navigateTo({
             url: '/pages/home/rank-list/rank-list',
         })
     },
     navBarClickLeft: function () {
         wx.reLaunch({
-            url: '/pages/home/home/home',
+            url: '/pages/home/index/index',
         })
     },
     // 进入首页
@@ -54,7 +56,12 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (options) {},
+    onLoad: function (options) {
+        console.log(options);
+        this.setData({
+            temp: options.temp
+        })
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
@@ -62,12 +69,7 @@ Page({
     /**
      * 生命周期函数--监听页面显示
      */
-    onShow: function () {
-        this.setData({
-            cPLg: app.globalData.cPLg
-        })
-        // 更新全局变量
-    },
+    onShow: function () {},
     /**
      * 生命周期函数--监听页面隐藏
      */

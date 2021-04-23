@@ -58,7 +58,7 @@
 
 .home .tabs .tab-desc-cust {
     padding: 8px;
-    border: 1px solid #d4d4d5;
+    box-shadow: 1px 1px 4px 0px #d4d4d5;
 }
 
 .home .tabs .tab-item-cust {

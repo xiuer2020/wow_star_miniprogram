@@ -36,9 +36,12 @@
 
 .buy-intr-cust{
     width: 90%;
+    padding-top: 24px;
     border-radius: 16px;
     overflow: hidden;
 }
+
+
 
 .buy-intr .cofi-butt{
     color: #ff1515;

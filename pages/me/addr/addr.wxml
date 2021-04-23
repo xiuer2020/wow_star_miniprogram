@@ -8,7 +8,7 @@
     <van-empty description="暂无订单" custom-class="empt-cust" class="empt" wx:if="{{false}}"></van-empty>
     <van-cell wx-else label="广州 广州" is-link bind:tap="emitAddr">
         <view slot="title">
-            <text class="iconfont icon-qianjin"></text>
+            <text class="iconfont icon-iconset0391 mr-base"></text>
             <text>盘盘 189166666719</text>
         </view>
     </van-cell>

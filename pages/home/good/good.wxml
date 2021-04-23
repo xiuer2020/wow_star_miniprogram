@@ -5,6 +5,7 @@
             <text class="text">商品详情</text>
         </view>
     </van-nav-bar>
+
     <view class="deta-imag-layo">
         <image src="/assets/images/good-deta.png"></image>
     </view>

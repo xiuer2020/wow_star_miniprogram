@@ -1,0 +1,1 @@
+<view style="padding-top: 100px" bind:tap="goC">pageB</view>
