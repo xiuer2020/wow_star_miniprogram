@@ -20,7 +20,7 @@
     <van-tab title="最新上架">
       <view class="tabs-cont">
         <van-row gutter="8">
-          <van-col span="12" bind:tap="toGoodDeta" data-temp="123">
+          <van-col span="12" bind:tap="toGoodDeta" data-id="123">
             <view class="imag-layo">
               <image src="/assets/images/item-tab.png" class="imag"></image>
             </view>
@@ -53,4 +53,6 @@
     <van-tab title="《漫游》">{{cPLg}}</van-tab>
     <van-tab title="《1626》">内</van-tab>
   </van-tabs>
+
+  <van-toast selector="#van-toast" id="van-toast"></van-toast>
 </view>

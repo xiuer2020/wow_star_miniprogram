@@ -4,14 +4,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    cPLg: null,
+    cPLg: app.globalData.cPLg,
     // 主题色
     mailType: null,
     // 寄件类型
     buyIntrShowStat: false,
     // 购买说明
   },
-  setAddr: function(){
+  Toast: app.globalData.Toast,
+  setAddr: function () {
     wx.reLaunch({
       url: '/pages/me/add-addr/add-addr',
     })
@@ -59,9 +60,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.setData({
-      cPLg: app.globalData.cPLg
-    })
+    this.Toast('更新购买数量')
   },
   /**
    * 生命周期函数--监听页面隐藏

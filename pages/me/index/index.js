@@ -15,12 +15,12 @@ Page({
         switch (e.detail) {
             case 0:
                 wx.reLaunch({
-                    url: '/pages/home/home/home',
+                    url: '/pages/home/index/index',
                 });
                 break;
             case 1:
                 wx.reLaunch({
-                    url: '/pages/me/me/me',
+                    url: '/pages/me/index/index',
                 })
         }
     },

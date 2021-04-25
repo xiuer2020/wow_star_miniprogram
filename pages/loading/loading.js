@@ -1,4 +1,4 @@
-let app = getApp();
+// pages/loading/loading.js
 Page({
 
     /**
@@ -7,20 +7,12 @@ Page({
     data: {
 
     },
-    goC() {
-        wx.navigateTo({
-            url: '/pages/pageB/pageB'
-        });
-    },
+
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        app.pubSub.on('hello', (number) => {
-            this.setData({
-                helloMsg: 'hello times:' + number
-            });
-        });
+
     },
 
     /**

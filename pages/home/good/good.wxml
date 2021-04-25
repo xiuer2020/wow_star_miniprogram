@@ -14,7 +14,7 @@
             <van-button color="#000000" block bind:tap="enteRankList">排行榜</van-button>
         </van-col>
         <van-col span="12">
-            <van-button color="#000000" block plain bind:tap="Toast">倒计时</van-button>
+            <van-button color="#000000" block plain>{{countDownText}}</van-button>
         </van-col>
     </van-row>
     <view class="main">
@@ -38,42 +38,42 @@
             唐小天 | 作为演员
         </view>
         <van-cell value="￥ 30" value-class="price-valu-clas">
-            <van-radio-group value="{{ numb }}" slot="title"  bind:change="numbUpda">
+            <van-radio-group value="{{ numb }}" slot="title" bind:change="numbUpda">
                 <van-radio checked-color="{{cPLg}}" name="{{1}}">1本</van-radio>
             </van-radio-group>
         </van-cell>
         <van-cell value="￥ 3000" value-class="price-valu-clas">
-            <van-radio-group value="{{ numb }}" slot="title"  bind:change="numbUpda">
+            <van-radio-group value="{{ numb }}" slot="title" bind:change="numbUpda">
                 <van-radio checked-color="{{cPLg}}" name="{{100}}">100本</van-radio>
             </van-radio-group>
         </van-cell>
         <van-cell value="￥ 15600" value-class="price-valu-clas">
-            <van-radio-group value="{{ numb }}" slot="title"  bind:change="numbUpda">
+            <van-radio-group value="{{ numb }}" slot="title" bind:change="numbUpda">
                 <van-radio checked-color="{{cPLg}}" name="{{520}}">520本</van-radio>
             </van-radio-group>
         </van-cell>
         <van-cell value="￥ 30" value-class="price-valu-clas">
-            <van-radio-group value="{{ numb }}" slot="title"  bind:change="numbUpda">
+            <van-radio-group value="{{ numb }}" slot="title" bind:change="numbUpda">
                 <van-radio checked-color="{{cPLg}}" name="{{1314}}">1314本</van-radio>
             </van-radio-group>
         </van-cell>
         <van-cell value="￥ 30" value-class="price-valu-clas">
-            <van-radio-group value="{{ numb }}" slot="title"  bind:change="numbUpda">
+            <van-radio-group value="{{ numb }}" slot="title" bind:change="numbUpda">
                 <van-radio checked-color="{{cPLg}}" name="{{1314}}">1314本</van-radio>
             </van-radio-group>
         </van-cell>
         <van-cell value="￥ 30" value-class="price-valu-clas">
-            <van-radio-group value="{{ numb }}" slot="title"  bind:change="numbUpda">
+            <van-radio-group value="{{ numb }}" slot="title" bind:change="numbUpda">
                 <van-radio checked-color="{{cPLg}}" name="{{1314}}">1314本</van-radio>
             </van-radio-group>
         </van-cell>
         <van-cell value="￥ 30" value-class="price-valu-clas">
-            <van-radio-group value="{{ numb }}" slot="title"  bind:change="numbUpda">
+            <van-radio-group value="{{ numb }}" slot="title" bind:change="numbUpda">
                 <van-radio checked-color="{{cPLg}}" name="{{1314}}">1314本</van-radio>
             </van-radio-group>
         </van-cell>
         <van-cell value="￥ 30" value-class="price-valu-clas">
-            <van-radio-group value="{{ numb }}" slot="title"  bind:change="numbUpda">
+            <van-radio-group value="{{ numb }}" slot="title" bind:change="numbUpda">
                 <van-radio checked-color="{{cPLg}}" name="{{1314}}">1314本</van-radio>
             </van-radio-group>
         </van-cell>
@@ -89,5 +89,8 @@
             <van-button color="#000000" block bind:tap="toOrde">立即购买</van-button>
         </view>
     </van-popup>
-    <van-toast id="van-toast" selector="#van-toast">{{toasMass}}</van-toast>
+    <van-toast id="van-toast" selector="#van-toast">未定义</van-toast>
+    <van-popup show="{{ loadShow }}" class="load-layo">
+        <van-loading custom-class="load-cust"></van-loading>
+    </van-popup>
 </view>

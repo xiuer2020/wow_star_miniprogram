@@ -90,3 +90,8 @@
 .good .comf .popu-btn-layo {
     margin: 18px 32px;
 }
+
+.load-layo .load-cust{
+    width: 42px;
+    height: 42px;
+}

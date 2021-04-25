@@ -1,2 +1,0 @@
-<view style="padding-top: 100px" bind:tap="doSomething">doSomething</view>
-<view style="padding-top: 100px" bind:tap="off">off</view>

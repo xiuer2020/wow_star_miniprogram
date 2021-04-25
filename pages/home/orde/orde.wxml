@@ -83,4 +83,5 @@
     <view class="foot-btn-layo">
         <van-button block color="{{cPLg}}" bind:click="login">微信支付</van-button>
     </view>
+    <van-toast class="" id="van-toast">未定义</van-toast>
 </view>

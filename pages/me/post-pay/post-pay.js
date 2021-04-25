@@ -10,7 +10,7 @@ Page({
     Toast: app.globalData.Toast,
     navBarClickLeft: function(){
         wx.reLaunch({
-          url: '/pages/me/me/me',
+          url: '/pages/me/index/index',
         })
     },
     // 页面导航
