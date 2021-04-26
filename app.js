@@ -5,7 +5,12 @@ import Toast from '@vant/weapp/toast/toast.js';
 
 App({
   onLaunch() {
-
+    wx.login({
+      success: function(res){
+        
+        console.log(res);
+      }
+    })
   },
   globalData: {
     cPLg: '#2c2c2c',
