@@ -20,25 +20,16 @@
     <van-tab title="最新上架">
       <view class="tabs-cont">
         <van-row gutter="8">
+          <van-col span="12" wx:for="{{allGoodList}}" wx:key="*this" data-item="{{item}}" custom-class="good" bind:tap="toGoodDeta">
+            <view class="imag-layo">
+              <image src="{{item.cover_image}}" class="imag"></image>
+            </view>
+            <van-cell custom-class="tab-desc-cust" use-label-slot border="{{false}}">
+              <view slot="title">{{item.owner}} | {{item.name}}</view>
+              <view slot="label">销量 {{item.sale_quantity}}</view>
+            </van-cell>
+          </van-col>
           <van-col span="12" bind:tap="toGoodDeta" data-id="123">
-            <view class="imag-layo">
-              <image src="/assets/images/item-tab.png" class="imag"></image>
-            </view>
-            <van-cell custom-class="tab-desc-cust" use-label-slot border="{{false}}">
-              <view slot="title">刘一含 | 开到花期</view>
-              <view slot="label">销量 2794</view>
-            </van-cell>
-          </van-col>
-          <van-col span="12">
-            <view class="imag-layo">
-              <image src="/assets/images/item-tab.png" class="imag"></image>
-            </view>
-            <van-cell custom-class="tab-desc-cust" use-label-slot border="{{false}}">
-              <view slot="title">刘一含 | 开到花期</view>
-              <view slot="label">销量 2794</view>
-            </van-cell>
-          </van-col>
-          <van-col span="12" custom-class="tab-item-cust">
             <view class="imag-layo">
               <image src="/assets/images/item-tab.png" class="imag"></image>
             </view>

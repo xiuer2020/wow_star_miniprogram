@@ -3,65 +3,65 @@
     height: 40px;
 }
 
-.tabs .tabs-nav {
+.tabs.tabs-nav {
     height: 40px;
-}
-
-.tab .tabs-tab {
-    margin-top: 16px;
 }
 
 
 /* .home-tabs  */
 /* 通用 */
 /* 样式 */
-.home {
+.home{
     padding-bottom: 48px;
     padding-top: 46px;
 }
 
-.home .home-head {
+.home-head {
     padding: 0 20px;
     height: 34px;
     overflow: hidden;
     /* background-image: url("../../assets/images/head-home.png"); */
 }
 
-.home .home-head .imag {
+.home-head .imag {
     width: 100%;
     height: 34px;
     /* 死坑死坑 */
 }
 
-.home .hoe-tabs {
+.hoe-tabs {
     padding-top: 20px;
     padding-bottom: 16px;
 }
 
-.home .home-swip {
+.home-swip {
     height: 154px;
     background: #cccccc;
 }
 
-.home .home-swip .swip-imag {
+.home-swip .swip-imag {
     width: 100%;
     height: 100%;
 }
 
-.home .tabs .tabs-cont {
+.tabs .tabs-cont {
     padding: 16px 20px 42px;
 }
 
-.home .tabs .imag-layo {
+.tabs .good{
+    margin-bottom: 12px;
+}
+
+.tabs .imag-layo {
     height: 210px;
 }
 
-.home .tabs .tab-desc-cust {
+.tabs .tab-desc-cust {
     padding: 8px;
     box-shadow: 1px 1px 4px 0px #d4d4d5;
 }
 
-.home .tabs .tab-item-cust {
+.tabs .tab-item-cust {
     padding-top: 12px;
 }
 

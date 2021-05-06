@@ -8,13 +8,13 @@ Page({
   },
   Toast: app.globalData.Toast,
   navBarClickLeft: function () {
-    wx.reLaunch({
+    wx.switchTab({
       url: '/pages/me/index/index',
     })
   },
   // 页面导航
   subm: function () {
-    wx.reLaunch({
+    wx.switchTab({
       url: '/pages/me/index/index',
     })
   },

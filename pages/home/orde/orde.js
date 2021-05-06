@@ -13,13 +13,13 @@ Page({
   },
   Toast: app.globalData.Toast,
   setAddr: function () {
-    wx.reLaunch({
+    wx.navigateTo({
       url: '/pages/me/add-addr/add-addr',
     })
   },
   // 设置收货地址
   navBarClickLeft: function () {
-    wx.reLaunch({
+    wx.navigateTo({
       url: '/pages/home/good/good',
     })
   },

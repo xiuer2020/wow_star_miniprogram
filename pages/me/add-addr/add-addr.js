@@ -17,13 +17,13 @@ Page({
     },
     // 切换默认地址
     navBarClickLeft: function () {
-        wx.reLaunch({
+        wx.navigateTo({
             url: '/pages/me/addr/addr',
         })
     },
     // 页面导航
     save: function () {
-        wx.reLaunch({
+        wx.navigateTo({
             url: '/pages/me/addr/addr',
         })
     },

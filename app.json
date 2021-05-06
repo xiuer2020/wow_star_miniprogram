@@ -1,6 +1,7 @@
 {
     "pages": [
         "pages/home/index/index",
+        "pages/me/index/index",
         "pages/me/orde/orde",
         "pages/home/good/good",
         "pages/home/orde/orde",
@@ -9,7 +10,6 @@
         "pages/me/post-pay/post-pay",
         "pages/me/addr/addr",
         "pages/me/add-addr/add-addr",
-        "pages/me/index/index",
         "pages/logi/logi",
         "pages/demo/demo"
     ],

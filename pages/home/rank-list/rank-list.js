@@ -5,7 +5,7 @@ Page({
      */
     data: {},
     navBarClickLeft: function () {
-        wx.reLaunch({
+        wx.navigateTo({
             url: '/pages/home/good/good',
         })
     },

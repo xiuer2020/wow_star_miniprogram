@@ -1,4 +1,5 @@
 const {counDownFormDate} = require('../../../utils/utils.js')
+import typeConv from '../../../utils/type_conv.js';
 const app = getApp();
 Page({
     /**
@@ -17,6 +18,8 @@ Page({
         // 倒计时剩余时间
         loadShow: false,
         // 加载样式展示状态
+        good: null
+        // 选中商品
     },
     numbUpda: function (e) {
         this.setData({
@@ -25,13 +28,13 @@ Page({
     },
     // 数量更新
     enteRankList: function () {
-        // wx.reLaunch({
+        // wx.navigateTo({
         wx.navigateTo({
             url: '/pages/home/rank-list/rank-list',
         })
     },
     navBarClickLeft: function () {
-        wx.reLaunch({
+        wx.switchTab({
             url: '/pages/home/index/index',
         })
     },
@@ -51,7 +54,7 @@ Page({
     toOrde: function () {
         app.home.purcQuan = 1;
         // 更新购买数量
-        wx.reLaunch({
+        wx.navigateTo({
             url: '/pages/home/orde/orde',
         })
     },
@@ -60,8 +63,10 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function () {
-        
+    onLoad: function (options) {
+       this.setData({
+           good: typeConv.json(options.item)
+       })
     },
     /**
      * 生命周期函数--监听页面初次渲染完成

@@ -9,7 +9,7 @@ Page({
     },
     Toast: app.globalData.Toast,
     navBarClickLeft: function(){
-        wx.reLaunch({
+        wx.switchTab({
           url: '/pages/me/index/index',
         })
     },

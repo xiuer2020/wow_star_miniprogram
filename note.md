@@ -17,3 +17,6 @@ default默认
 count down倒计时
 time remaining剩余时间
 purchase quantityg 购买数量
+
+
+type conversion类型转换

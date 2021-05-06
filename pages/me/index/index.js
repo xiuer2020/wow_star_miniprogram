@@ -11,44 +11,28 @@ Page({
         // 主题色
     },
     Toast: app.globalData.Toast,
-    naviTo: function (e) {
-        switch (e.detail) {
-            case 0:
-                wx.reLaunch({
-                    url: '/pages/home/index/index',
-                });
-                break;
-            case 1:
-                wx.reLaunch({
-                    url: '/pages/me/index/index',
-                })
-        }
-    },
-    // 底部选项栏导航
     naviOrde: function(){
-        console.log('ente');
-        wx.reLaunch({
+        wx.navigateTo({
           url: '/pages/me/orde/orde',
         })
     },
     // 进入我的订单
     naviAddr: function(){
         console.log('ente');
-        wx.reLaunch({
+        wx.navigateTo({
           url: '/pages/me/addr/addr',
         })
     },
     // 进入我的地址
     naviFeed: function(){
-        console.log('ente');
-        wx.reLaunch({
+        wx.navigateTo({
           url: '/pages/me/feed/feed',
         })
     },
     // 进入意见反馈
     naviPostPay: function(){
         console.log('ente');
-        wx.reLaunch({
+        wx.navigateTo({
           url: '/pages/me/post-pay/post-pay',
         })
     },

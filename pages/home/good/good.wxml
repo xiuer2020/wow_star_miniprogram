@@ -19,12 +19,10 @@
     </van-row>
     <view class="main">
         <view class="titl">
-            唐小天<text> | </text>作为演员
+            {{good.owner}}<text> | </text>{{good.name}}
         </view>
-        <view class="labe c-text-md pt-xs">已售出916套</view>
-        <view class="desc c-text-sm">desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc
-            desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc
-            desc desc desc desc desc desc desc desc desc desc desc desc desc </view>
+        <view class="labe c-text-md pt-xs">已售出{{good.sale_quantity}}套</view>
+        <view class="desc c-text-sm">{{good.description}}</view>
     </view>
     <view class="encl">
     </view>
@@ -35,7 +33,7 @@
     <van-popup show="{{ orderShow }}" close-on-click-overlay closeable bind:close="popuOverClic" position="bottom"
         bind:click-overlay="popuOverClic" class="comf">
         <view class="head">
-            唐小天 | 作为演员
+            {{good.owner}} | {{good.name}}
         </view>
         <van-cell value="￥ 30" value-class="price-valu-clas">
             <van-radio-group value="{{ numb }}" slot="title" bind:change="numbUpda">

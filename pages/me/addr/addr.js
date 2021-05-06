@@ -11,19 +11,19 @@ Page({
     },
     Toast: app.globalData.Toast,
     emitAddr: function(){
-      wx.reLaunch({
+      wx.navigateTo({
         url: '/pages/me/add-addr/add-addr',
       })
     },
     navBarClickLeft:function(){
-        wx.reLaunch({
+        wx.switchTab({
           url: '/pages/me/index/index',
         })
     },
     // 页面导航
     addAddr:function(){
       console.log('ente');
-      wx.reLaunch({
+      wx.navigateTo({
         url: '/pages/me/add-addr/add-addr',
       })
     },

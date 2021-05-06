@@ -6,7 +6,7 @@ Page({
     data: {
     },
     navBarClickLeft:function(){
-        wx.reLaunch({
+        wx.switchTab({
           url: '/pages/me/index/index',
         })
     },
