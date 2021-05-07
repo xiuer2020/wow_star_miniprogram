@@ -4,6 +4,26 @@ const loda = require('lodash')
 import Toast from '@vant/weapp/toast/toast.js';
 
 App({
+  globalData: {
+    cPLg: '#2c2c2c',
+    //  主题色
+    Toast,
+    // 轻提示
+    loda,
+    // @tabb-heig: 50px;
+    token: null
+    // 验证信息
+  },
+  orde: {
+    seleItem: null,
+    // 选中的商品
+    purcQuan: 0,
+    // 购买数量
+  },
+  addr: {
+    currAddr: null
+    // 默认地址
+  },
   onLaunch() {
     wx.request({
       url:"http://127.0.0.1:8000/login",
@@ -40,20 +60,7 @@ App({
     })
     
   },
-  globalData: {
-    cPLg: '#2c2c2c',
-    //  主题色
-    Toast,
-    // 轻提示
-    loda,
-    // @tabb-heig: 50px;
-    token: null
-    // 验证信息
-  },
-  home: {
-    // seleItem: '',
-    // 选中的商品
-    purcQuan: 0,
-    // 购买数量
+  onHide(){
+    
   }
 })

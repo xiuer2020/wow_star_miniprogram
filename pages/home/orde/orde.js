@@ -10,11 +10,12 @@ Page({
     // 寄件类型
     buyIntrShowStat: false,
     // 购买说明
+    good: {},
   },
   Toast: app.globalData.Toast,
   setAddr: function () {
     wx.navigateTo({
-      url: '/pages/me/add-addr/add-addr',
+      url: '/pages/me/addr/addr',
     })
   },
   // 设置收货地址
@@ -60,7 +61,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.Toast('更新购买数量')
+    this.setData({
+      good: app.orde.seleItem
+    })
   },
   /**
    * 生命周期函数--监听页面隐藏

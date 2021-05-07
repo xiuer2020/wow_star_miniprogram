@@ -2,17 +2,20 @@
     <van-nav-bar bind:click-left="navBarClickLeft" fixed border="{{false}}" class="page-nav-bar">
         <view slot="left">
             <text class="iconfont icon-houtui pr-sm"></text>
-            <text class="text">我的订单</text>
+            <text class="text">我的收货地址</text>
         </view>
     </van-nav-bar>
     <van-empty description="暂无订单" custom-class="empt-cust" class="empt" wx:if="{{false}}"></van-empty>
-    <van-cell wx-else label="广州 广州" is-link bind:tap="emitAddr">
-        <view slot="title">
-            <text class="iconfont icon-iconset0391 mr-base"></text>
-            <text>盘盘 189166666719</text>
-        </view>
-    </van-cell>
-    <view bind:tap="addAddr" class="add-butt-layo" style="position:fixed; left: 0; bottom: 0; box-sizing: border-box; padding: 8px; width:100%;">
-        <van-button color="{{cPLg}}" block>添加收获地址</van-button>
+    <van-cell-goup class="addrs">
+        <van-cell wx-else label="广州 广州" is-link bind:tap="emitAddr">
+            <view slot="title">
+                <text class="iconfont icon-iconset0391 mr-base"></text>
+                <text>盘盘 189166666719</text>
+            </view>
+        </van-cell>
+    </van-cell-goup>
+    <view bind:tap="addAddr" class="add-butt-layo"
+        style="position:fixed; left: 0; bottom: 0; box-sizing: border-box; padding: 8px; width:100%;">
+        <van-button color="{{cPLg}}" block>添加收货地址</van-button>
     </view>
 </view>

@@ -11,7 +11,7 @@
     </view>
     <view class="cell-group">
         <van-cell title="我的订单" border="{{false}}" is-link  bind:tap="naviOrde" custom-class="cell"></van-cell>
-        <van-cell title="我的收获地址" border="{{false}}" is-link bind:tap="naviAddr"  custom-class="cell"></van-cell>
+        <van-cell title="我的收货地址" border="{{false}}" is-link bind:tap="naviAddr"  custom-class="cell"></van-cell>
         <van-cell title="意见反馈" border="{{false}}" is-link  bind:tap="naviFeed" custom-class="cell"></van-cell>
         <van-cell title="邮费补缴" border="{{false}}" is-link  bind:tap="naviPostPay" custom-class="cell"></van-cell>
     </view>

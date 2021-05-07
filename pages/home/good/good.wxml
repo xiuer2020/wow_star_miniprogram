@@ -7,7 +7,7 @@
     </van-nav-bar>
 
     <view class="deta-imag-layo">
-        <image src="/assets/images/good-deta.png"></image>
+        <image src="{{good.cover_image}}"></image>
     </view>
     <van-row custom-class="btn-layo-cust" gutter="12" class="btn-layo">
         <van-col span="12">
@@ -87,7 +87,7 @@
             <van-button color="#000000" block bind:tap="toOrde">立即购买</van-button>
         </view>
     </van-popup>
-    <van-toast id="van-toast" selector="#van-toast">未定义</van-toast>
+    <van-toast id="van-toast" selector="#van-toast"></van-toast>
     <van-popup show="{{ loadShow }}" class="load-layo">
         <van-loading custom-class="load-cust"></van-loading>
     </van-popup>

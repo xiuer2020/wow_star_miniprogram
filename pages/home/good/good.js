@@ -1,5 +1,7 @@
-const {counDownFormDate} = require('../../../utils/utils.js')
-import typeConv from '../../../utils/type_conv.js';
+const {
+    counDownFormDate
+} = require('../../../utils/utils.js')
+import Toast from '../../../miniprogram_npm/@vant/weapp/toast/toast';
 const app = getApp();
 Page({
     /**
@@ -52,21 +54,26 @@ Page({
     },
     // 立即购买
     toOrde: function () {
-        app.home.purcQuan = 1;
-        // 更新购买数量
-        wx.navigateTo({
-            url: '/pages/home/orde/orde',
-        })
+        if (this.data.numb) {
+            app.orde.purcQuan = this.data.numb;
+            // 更新购买数量
+            wx.navigateTo({
+                url: '/pages/home/orde/orde',
+            })
+        } else {
+            return Toast('请选择购买数量');
+        }
+
+
     },
     // 进入订单页
-    Toast: app.globalData.Toast,
+    Toast,
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (options) {
-       this.setData({
-           good: typeConv.json(options.item)
-       })
+    onLoad: function () {
+
+
     },
     /**
      * 生命周期函数--监听页面初次渲染完成
@@ -76,22 +83,22 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        this.Toast('获取到globalDta,设置倒计时剩余时间');
-        let timeRema = 70000;
+        let timeRema = Math.floor((new Date(app.orde.seleItem.deadline).getTime() - Date.now()) / 1000);
         this.setData({
-            countDownText: counDownFormDate(timeRema),
-            // loadShow: false
-        })    
+            good: app.orde.seleItem,
+            countDownText: counDownFormDate(timeRema)
+        })
+
         let timer = setInterval(() => {
-            if(timeRema<=0){
+            if (timeRema <= 0) {
                 clearInterval(timer);
                 timer = null;
                 timeRema = null;
             }
             this.setData({
                 countDownText: counDownFormDate(timeRema)
-            })                
-            timeRema --
+            })
+            timeRema--
         }, 1000)
     },
     /**

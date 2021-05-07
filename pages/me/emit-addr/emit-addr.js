@@ -4,27 +4,30 @@ Page({
      * 页面的初始数据
      */
     data: {
-      cPLg: app.globalData.cPLg,
-      // 主题色
-      addrs: []
-      // 收货地址
+        cPLg: app.globalData.cPLg,
+        // 主题色
+        defaAddrChec: false,
+        // 默认地址选中状态
     },
     Toast: app.globalData.Toast,
-    emitAddr: function(){
-      wx.navigateTo({
-        url: '/pages/me/add-addr/add-addr',
-      })
+    defaAddrUpda: function(e){
+        this.setData({
+            defaAddrChec: e.detail
+        })
     },
-    navBarClickLeft:function(){
-        wx.navigateBack()
+    // 切换默认地址
+    navBarClickLeft: function () {
+        wx.navigateTo({
+            url: '/pages/me/addr/addr',
+        })
     },
     // 页面导航
-    addAddr:function(){
-      wx.navigateTo({
-        url: '/pages/me/add-addr/add-addr',
-      })
+    save: function () {
+        wx.navigateTo({
+            url: '/pages/me/addr/addr',
+        })
     },
-    // 添加收货地址
+    // 保存
     /**
      * 生命周期函数--监听页面加载
      */
@@ -43,7 +46,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-      
+
     },
 
     /**

@@ -5,12 +5,12 @@
             <text class="text">添加收货地址</text>
         </view>
     </van-nav-bar>
-    <van-field label="收货人" placeholder="请填写用户名" custom-class="field" model:value="{{ name }}"></van-field>
-    <van-field label="手机号码" placeholder="请填写手机号码" custom-class="field" model:value="{{ phone }}"></van-field>
-    <van-field label="所在地区" placeholder="请填写所在地区" custom-class="field" model:value="{{ site }}"></van-field>
-    <van-field label="详细地址" placeholder="请填写详细地址" custom-class="field" model:value="{{ detailSite }}"></van-field>
+    <van-field label="收货人" placeholder="请填写用户名" custom-class="field"></van-field>
+    <van-field label="手机号码" placeholder="请填写手机号码" custom-class="field"></van-field>
+    <van-field label="所在地区" placeholder="请填写所在地区" custom-class="field"></van-field>
+    <van-field label="详细地址" placeholder="请填写详细地址" custom-class="field"></van-field>
     <van-cell title="默认地址">
-        <van-switch checked="{{ defaAddrChec }}" active-color="{{cPLg}}" inactive-color="#989898" bind:change="defaAddrUpda" />
+        <van-switch checked="{{ defaAddrChec }}" active-color="{{cPLg}}" inactive-color="#989898" bind:change="defaAddrUpda"  />
     </van-cell>
     <view bind:tap="addAddr" class="add-butt-layo"
         style="position:fixed; left: 0; bottom: 0; box-sizing: border-box; padding: 8px; width:100%;">

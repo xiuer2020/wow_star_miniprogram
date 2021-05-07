@@ -8,13 +8,13 @@
     <van-cell border="{{false}}" is-link custom-class="modu-cell" bind:tap="setAddr" class="addr">
         <view slot="title">
             <text class="iconfont icon-iconset0391 pr-base"></text>
-            请设置收获地址
+            请设置收货地址
         </view>
     </van-cell>
     <view class="roug base-flex" style="margin: 0 20px; padding: 8px; background: #fafafa;">
         <view class="imag-layo fx1 mr-sm" style="height: 88px; background: #ccc;"></view>
         <view class="base-flex fx4 fxdc jcsb">
-            <view class="titl">唐晓天 | 作为演员</view>
+            <view class="titl">{{good.owner}} | {{good.name}}</view>
             <view class="base-flex jcsb">
                 <text>￥40</text>
                 <text>x 1套</text>
