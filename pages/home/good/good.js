@@ -8,7 +8,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        cPLg: app.globalData.cPLg,
+        cPLg: app.project.cPLg,
         // 主题色
         orderShow: false,
         // 订单展示状态
@@ -67,7 +67,10 @@ Page({
 
     },
     // 进入订单页
-    Toast,
+    viewDetail: function(){
+        Toast.fail('未定义');
+    },
+    // 查看详情
     /**
      * 生命周期函数--监听页面加载
      */

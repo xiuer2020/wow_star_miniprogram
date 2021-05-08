@@ -1,3 +1,4 @@
+import Toast from '../../../miniprogram_npm/@vant/weapp/toast/toast';
 const app = getApp();
 // pages/me/me.js
 Page({
@@ -10,7 +11,7 @@ Page({
         cPLg: null
         // 主题色
     },
-    Toast: app.globalData.Toast,
+    Toast,
     naviOrde: function(){
         wx.navigateTo({
           url: '/pages/me/orde/orde',
@@ -18,7 +19,6 @@ Page({
     },
     // 进入我的订单
     naviAddr: function(){
-        console.log('ente');
         wx.navigateTo({
           url: '/pages/me/addr/addr',
         })
@@ -56,7 +56,7 @@ Page({
      */
     onShow: function () {
         this.setData({
-            cPLg: app.globalData.cPLg
+            cPLg: app.project.cPLg
         })
         // 更新全局变量
     },

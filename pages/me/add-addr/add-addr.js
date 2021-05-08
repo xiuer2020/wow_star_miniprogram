@@ -1,36 +1,28 @@
 const app = getApp();
+import Toast from '../../../miniprogram_npm/@vant/weapp/toast/toast';
 Page({
     /**
      * 页面的初始数据
      */
     data: {
-        cPLg: app.globalData.cPLg,
+        cPLg: app.project.cPLg,
         // 主题色
-        defaAddrChec: false,
-        // 默认地址选中状态
         name: '',
         // 收货人
         phone: '',
         // 收货人手机号
-        site: '',
+        region: '',
         // 地区
-        detailSite: '',
+        detailAddr: '',
         // 详细地址
         currentAddr: false,
         // 是否为当前收货地址
     },
-    Toast: app.globalData.Toast,
+    Toast,
     defaAddrUpda: function (e) {
-        if (e.detail) {
-            this.setData({
-                defaAddrChec: 1
-            })
-        } else {
-            this.setData({
-                defaAddrChec: 0
-            })
-        }
-
+        this.setData({
+            currentAddr: e.detail
+        })
     },
     // 切换默认地址
     navBarClickLeft: function () {
@@ -41,22 +33,29 @@ Page({
     // 页面导航
     save: function () {
         wx.request({
-            url: 'http://127.0.0.1:8000/setAddr',
+            url: 'http://127.0.0.1:8000/api/setAddr',
             data: {
+                token: app.user.token,
                 name: this.data.name,
-                addr: this.data.site + this.data.detailSite,
-                currentAddr: this.data.currentAddr,
-                phone: this.data.name,
-                currentAddr: this.data.defaAddrChec
+                region: this.data.region,
+                detailAddr: this.data.detailAddr,
+                currentAddr: Number(this.data.currentAddr),
+                phone: this.data.name
             },
             success: res => {
-                console.log(res);
+              Toast('添加地址成功');
+              setTimeout(() => {
+                wx.navigateBack();
+              }, 400)
+            },
+            fail: err => {
+                wx.showToast({
+                  title: 'err',
+                })
             }
         })
 
-        wx.navigateTo({
-            url: '/pages/me/addr/addr',
-        })
+ 
     },
     // 保存
     /**

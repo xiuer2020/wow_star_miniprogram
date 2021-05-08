@@ -7,10 +7,10 @@
     </van-nav-bar>
     <van-empty description="暂无订单" custom-class="empt-cust" class="empt" wx:if="{{false}}"></van-empty>
     <van-cell-goup class="addrs">
-        <van-cell wx-else label="广州 广州" is-link bind:tap="emitAddr">
+        <van-cell wx-else label="{{item.region}} {{item.detail_addr}}" is-link bind:tap="emitAddr" data-item="{{item}}" wx:for="{{addrs}}">
             <view slot="title">
-                <text class="iconfont icon-iconset0391 mr-base"></text>
-                <text>盘盘 189166666719</text>
+                <text class="iconfont icon-iconset0391 mr-base" wx:if="{{item.current_addr == 1}}"></text>
+                <text>{{item.name}} {{item.phone}}</text>
             </view>
         </van-cell>
     </van-cell-goup>

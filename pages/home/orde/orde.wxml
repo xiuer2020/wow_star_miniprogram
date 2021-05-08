@@ -5,12 +5,21 @@
             <text class="text">确认订单</text>
         </view>
     </van-nav-bar>
-    <van-cell border="{{false}}" is-link custom-class="modu-cell" bind:tap="setAddr" class="addr">
+
+    <van-cell wx-else label="{{currentAddr.region}} {{currentAddr.detail_addr}}" is-link bind:tap="toAddr"
+        data-item="{{item}}" class="addr" wx:if="currentAddr">
+        <view slot="title">
+            <text class="iconfont icon-iconset0391 mr-base" wx:if="{{currentAddr.current_addr == 1}}"></text>
+            <text>{{currentAddr.name}} {{currentAddr.phone}}</text>
+        </view>
+    </van-cell>
+    <van-cell border="{{false}}" is-link custom-class="modu-cell" bind:tap="setAddr" class="addr" wx:else bind:tap="toAddr">
         <view slot="title">
             <text class="iconfont icon-iconset0391 pr-base"></text>
             请设置收货地址
         </view>
     </van-cell>
+
     <view class="roug base-flex" style="margin: 0 20px; padding: 8px; background: #fafafa;">
         <view class="imag-layo fx1 mr-sm" style="height: 88px; background: #ccc;"></view>
         <view class="base-flex fx4 fxdc jcsb">
@@ -81,7 +90,7 @@
         <van-button block custom-class="cofi-butt" bind:tap="buyIntrClos">确认</van-button>
     </van-popup>
     <view class="foot-btn-layo">
-        <van-button block color="{{cPLg}}" bind:click="login">微信支付</van-button>
+        <van-button block color="{{cPLg}}" bind:click="comfirmOrde">微信支付</van-button>
     </view>
-    <van-toast class="" id="van-toast">未定义</van-toast>
+    <van-toast class="" id="van-toast"></van-toast>
 </view>

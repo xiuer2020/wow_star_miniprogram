@@ -7,7 +7,7 @@
         </view>
     </van-nav-bar>
     <view class="feed-text-layo">
-        <textarea placeholder="请输入您需要反馈的内容" class="feed-text"></textarea>
+        <textarea placeholder="请输入您需要反馈的内容" class="feed-text" model:value="{{feed}}" bindinput="feedbackInput"></textarea>
     </view>
     <view class="subm-butt-layo" bind:tap="subm"
         style="position: fixed; left: 8px; right: 8px; bottom: 8px; box-sizing: border-box; ">

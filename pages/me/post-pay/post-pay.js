@@ -1,13 +1,14 @@
+import Toast from '../../../miniprogram_npm/@vant/weapp/toast/toast';
 const app = getApp();
 Page({
     /**
      * 页面的初始数据
      */
     data: {
-      cPLg: app.globalData.cPLg,
+      cPLg: app.project.cPLg,
       username: ''
     },
-    Toast: app.globalData.Toast,
+    Toast,
     navBarClickLeft: function(){
         wx.switchTab({
           url: '/pages/me/index/index',

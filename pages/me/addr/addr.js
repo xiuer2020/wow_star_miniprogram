@@ -1,22 +1,37 @@
 const app = getApp();
+import Toast from '../../../miniprogram_npm/@vant/weapp/toast/toast';
 Page({
     /**
      * 页面的初始数据
      */
     data: {
-      cPLg: app.globalData.cPLg,
+      cPLg: app.project.cPLg,
       // 主题色
-      addrs: []
+      addrs: [],
       // 收货地址
     },
-    Toast: app.globalData.Toast,
-    emitAddr: function(){
+    Toast,
+    emitAddr: function(e){
+      app.user.emitAddr = e.currentTarget.dataset.item;
       wx.navigateTo({
-        url: '/pages/me/add-addr/add-addr',
+        url: '/pages/me/emit-addr/emit-addr',
       })
     },
     navBarClickLeft:function(){
-        wx.navigateBack()
+      const routes = getCurrentPages();
+      const redirectTargetList = ['pages/me/add-addr/add-addr',  'pages/home/orde/orde'];
+      let delta;
+      for(let i = routes.length-1; i>=0; i--){
+        if(redirectTargetList.includes(routes[i].route)){
+          delta = routes.length-1 - i;
+          break;
+        }
+      }
+      console.log(delta);
+      wx.navigateBack({
+        delta
+      })
+        
     },
     // 页面导航
     addAddr:function(){
@@ -29,7 +44,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+     
     },
 
     /**
@@ -43,7 +58,10 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-      
+      console.log(getCurrentPages());
+      this.setData({
+        addrs: app.user.addrs
+      })
     },
 
     /**

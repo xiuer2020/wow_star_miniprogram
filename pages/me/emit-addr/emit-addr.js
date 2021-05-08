@@ -1,19 +1,30 @@
 const app = getApp();
+import Toast from '../../../miniprogram_npm/@vant/weapp/toast/toast';
 Page({
     /**
      * 页面的初始数据
      */
     data: {
-        cPLg: app.globalData.cPLg,
+        cPLg: app.project.cPLg,
         // 主题色
-        defaAddrChec: false,
-        // 默认地址选中状态
+        name: '',
+        // 收货人
+        phone: '',
+        // 收货人手机号
+        region: '',
+        // 地区
+        detailAddr: '',
+        // 详细地址
+        currentAddr: false,
+        // 是否为当前收货地址
+        emitAddr: null,
+        // 编辑的地址
     },
-    Toast: app.globalData.Toast,
-    defaAddrUpda: function(e){
+    Toast,
+    defaAddrUpda: function (e) {
         this.setData({
-            defaAddrChec: e.detail
-        })
+            currentAddr: e.detail
+        });
     },
     // 切换默认地址
     navBarClickLeft: function () {
@@ -23,9 +34,32 @@ Page({
     },
     // 页面导航
     save: function () {
-        wx.navigateTo({
-            url: '/pages/me/addr/addr',
+        wx.request({
+            url: 'http://127.0.0.1:8000/api/updateAddr',
+            data: {
+                token: app.user.token,
+                name: this.data.name,
+                region: this.data.region,
+                detailAddr: this.data.detailAddr,
+                currentAddr: Number(this.data.currentAddr),
+                phone: this.data.name,
+                addrId: this.data.emitAddr.id
+            },
+            success: res => {
+                Toast('更新地址成功');
+                setTimeout(() => {
+                    wx.navigateTo({
+                        url: '/pages/me/addr/addr',
+                    })
+                }, 400)
+            },
+            fail: err => {
+                wx.showToast({
+                    title: 'err',
+                })
+            }
         })
+
     },
     // 保存
     /**
@@ -46,7 +80,14 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        this.setData({
+            emitAddr: app.user.emitAddr,
+            name: app.user.emitAddr.name,
+            phone: app.user.emitAddr.phone,
+            region: app.user.emitAddr.region,
+            detailAddr: app.user.emitAddr.detail_addr,
+            currentAddr: app.user.emitAddr.current_addr
+        })
     },
 
     /**

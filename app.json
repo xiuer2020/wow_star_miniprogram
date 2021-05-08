@@ -1,9 +1,10 @@
 {
     "pages": [
         "pages/home/index/index",
-        "pages/me/index/index",
-        "pages/me/orde/orde",
         "pages/home/good/good",
+        "pages/me/index/index",
+        "pages/me/emit-addr/emit-addr",
+        "pages/me/orde/orde",
         "pages/home/orde/orde",
         "pages/home/rank-list/rank-list",
         "pages/me/feed/feed",
@@ -40,7 +41,7 @@
         "navigationBarBackgroundColor": "#fff",
         "navigationBarTitleText": "Weixin",
         "navigationBarTextStyle": "black",
-        "navigationStyle": "custom"
+        "navigationStyle": "custom" 
     },
     "tabBar": {
         "color": "#8d9096",

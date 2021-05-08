@@ -1,19 +1,23 @@
 const app = getApp();
+import Toast from '../../../miniprogram_npm/@vant/weapp/toast/toast';
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    cPLg: app.globalData.cPLg,
+    cPLg: app.project.cPLg,
     // 主题色
     mailType: null,
     // 寄件类型
     buyIntrShowStat: false,
     // 购买说明
     good: {},
+    // 购买的产品
+    currentAddr: {},
+    // 当前收货地址
   },
-  Toast: app.globalData.Toast,
-  setAddr: function () {
+  Toast,
+  toAddr: function () {
     wx.navigateTo({
       url: '/pages/me/addr/addr',
     })
@@ -31,12 +35,36 @@ Page({
     })
   },
   // 寄件类型更新
-  login: function () {
+  comfirmOrde: function () {
+    if(this.data.good && app.orde.purcQuan && this.data.mailType && this.data.currentAddr){
+      wx.request({
+        url: 'http://127.0.0.1:8000/api/comfirmOrde',
+        data: {
+          token: app.user.token,
+          goodId: this.data.good.id,
+          goodQuantity: app.orde.purcQuan,
+          addr: `${this.data.currentAddr.region}${this.data.currentAddr.detail_addr}`,
+          mailingType: this.data.mailType
+        },
+        success: res => {
+          console.log(res);
+        },
+        fail: err => {
+          wx.showToast({
+            title: 'err',
+          })
+        }
+      })
+    }else{
+      Toast('请填写完整信息');
+    }
+
+    return
     wx.navigateTo({
       url: '/pages/logi/logi',
     })
   },
-  // 登录
+  // 确认订单
   buyIntrShow: function () {
     this.setData({
       buyIntrShowStat: true
@@ -61,8 +89,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    const currentAddr = app.user.addrs.find(x => x.current_addr == 1);
     this.setData({
-      good: app.orde.seleItem
+      good: app.orde.seleItem,
+      currentAddr,
+      purcQuan: app.orde.purcQuan
     })
   },
   /**

@@ -10,5 +10,4 @@
             <van-button color="#07c160" custom-class="empt-btn-cust" bind:tap="logi">微信授权登录</van-button>
         </view>
     </van-empty>
-    <van-toast id="van-toast" selector="#van-toast">未定义</van-toast>
 </view>

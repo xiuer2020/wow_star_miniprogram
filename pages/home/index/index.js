@@ -11,10 +11,10 @@ Page({
     // 所有商品
     hotGoodList: [],
     // 热门商品
-    cPLg: app.globalData.cPLg,
+    cPLg: app.project.cPLg,
   },
-  debounce: app.globalData.loda.debounce,
-  Toast: app.globalData.Toast,
+  debounce: app.project.loda.debounce,
+  Toast,
   swipChan: function (e) {
     this.setData({
       indiText: `${e.detail.current+1}`
@@ -32,12 +32,8 @@ Page({
 
   },
   onLoad() {
-    let token = wx.getStorageSync('_abc');
     wx.request({
-      url: 'http://127.0.0.1:8000/getGoodList',
-      data: {
-        token
-      },
+      url: 'http://127.0.0.1:8000/api/getGoodList',
       success: res => {
         this.setData({
           allGoodList: res.data.data,
@@ -48,6 +44,5 @@ Page({
         console.log(err);
       }
     });
-    token = null;
   }
 })

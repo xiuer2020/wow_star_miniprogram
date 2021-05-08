@@ -13,10 +13,11 @@ Page({
         })
     },
     // 遮罩层展示
-    Toast: app.globalData.Toast,
     // 轻提示
     logi: function () {
-        this.Toast('未授权')
+        wx.showToast({
+          title: '为授权',
+        })
     },
     // 登录
     navBarClickLeft: function(){
