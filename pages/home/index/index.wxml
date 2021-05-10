@@ -12,7 +12,7 @@
   </swiper>
   <view class="indi-layo" style="position: relative;">
     <view class="indi" style="position: absolute; right: 20px; bottom: 20px; z-index: 1;">
-     <text style="color: #f1e721;">{{indiText}}</text><text class="c-white"> / 4</text>
+      <text style="color: #f1e721;">{{indiText}}</text><text class="c-white"> / 4</text>
     </view>
   </view>
 
@@ -20,7 +20,8 @@
     <van-tab title="最新上架">
       <view class="tabs-cont">
         <van-row gutter="8">
-          <van-col span="12" wx:for="{{hotGoodList}}" wx:key="*this" data-item="{{item}}" custom-class="good" bind:tap="toGoodDeta">
+          <van-col span="12" wx:for="{{hotGoodList}}" wx:key="*this" data-item="{{item}}" custom-class="good"
+            bind:tap="toGoodDeta">
             <view class="imag-layo">
               <image src="{{item.cover_image}}" class="imag"></image>
             </view>
@@ -35,7 +36,8 @@
     <van-tab title="《漫游》">
       <view class="tabs-cont">
         <van-row gutter="8">
-          <van-col span="12" wx:for="{{allGoodList}}" wx:key="*this" data-item="{{item}}" custom-class="good" bind:tap="toGoodDeta">
+          <van-col span="12" wx:for="{{allGoodList}}" wx:key="*this" data-item="{{item}}" custom-class="good"
+            bind:tap="toGoodDeta">
             <view class="imag-layo">
               <image src="{{item.cover_image}}" class="imag"></image>
             </view>

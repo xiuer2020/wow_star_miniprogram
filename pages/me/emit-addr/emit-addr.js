@@ -36,6 +36,7 @@ Page({
     save: function () {
         wx.request({
             url: 'http://127.0.0.1:8000/api/updateAddr',
+            header:['authorization'],
             data: {
                 token: app.user.token,
                 name: this.data.name,

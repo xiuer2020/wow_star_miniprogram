@@ -28,10 +28,14 @@ Page({
     })
   },
   // 进入商品详情
+  bindGetUserInfo:function(e) {
+    console.log(e.detail.userInfo);//这里就有你想要的信息
+ },
   onShow() {
 
   },
   onLoad() {
+    return ;
     wx.request({
       url: 'http://127.0.0.1:8000/api/getGoodList',
       success: res => {
