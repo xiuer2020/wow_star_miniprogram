@@ -30,7 +30,7 @@ component_1.VantComponent({
   },
   data: {
     transition: true,
-    showPopup: false,
+    showpopup: false,
     showWrapper: false,
     displayTitle: '',
   },
@@ -78,7 +78,7 @@ component_1.VantComponent({
       var option = event.currentTarget.dataset.option;
       var value = option.value;
       var shouldEmitChange = this.data.value !== value;
-      this.setData({ showPopup: false, value: value });
+      this.setData({ showpopup: false, value: value });
       this.$emit('close');
       this.rerender();
       if (shouldEmitChange) {
@@ -91,16 +91,16 @@ component_1.VantComponent({
       if (options === void 0) {
         options = {};
       }
-      var showPopup = this.data.showPopup;
+      var showpopup = this.data.showpopup;
       if (typeof show !== 'boolean') {
-        show = !showPopup;
+        show = !showpopup;
       }
-      if (show === showPopup) {
+      if (show === showpopup) {
         return;
       }
       this.setData({
         transition: !options.immediate,
-        showPopup: show,
+        showpopup: show,
       });
       if (show) {
         (_a = this.parent) === null || _a === void 0

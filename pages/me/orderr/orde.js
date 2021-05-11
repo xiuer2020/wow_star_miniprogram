@@ -1,28 +1,13 @@
-const app = getApp();
+// pages/me/orderr/order.js
 Page({
+
     /**
      * 页面的初始数据
      */
     data: {
-        popuShowStat: true,
-        // 遮罩层状态
+
     },
-    popuShow: function () {
-        this.setData({
-            popuShowStat: true
-        })
-    },
-    // 遮罩层展示
-    // 轻提示
-    logi: function () {
-        wx.showToast({
-          title: '为授权',
-        })
-    },
-    // 登录
-    navBarClickLeft: function(){
-        wx.navigateBack()
-    },
+
     /**
      * 生命周期函数--监听页面加载
      */

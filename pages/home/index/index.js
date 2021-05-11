@@ -1,5 +1,6 @@
 import Toast from '@vant/weapp/toast/toast';
 import typeConv from '../../../utils/type_conv.js';
+import {request} from '../../../utils/request.js';
 const app = getApp();
 Page({
   data: {
@@ -13,7 +14,7 @@ Page({
     // 热门商品
     cPLg: app.project.cPLg,
   },
-  debounce: app.project.loda.debounce,
+  debounce: app.project.lodash.debounce,
   Toast,
   swipChan: function (e) {
     this.setData({
@@ -22,7 +23,7 @@ Page({
   },
   // 轮播图切换
   toGoodDeta: function (e) {
-    app.orde.seleItem = e.currentTarget.dataset.item;
+    app.order.selectedGood = e.currentTarget.dataset.item;
     wx.navigateTo({
       url: `/pages/home/good/good`
     })
@@ -35,10 +36,11 @@ Page({
 
   },
   onLoad() {
-    return ;
-    wx.request({
-      url: 'http://127.0.0.1:8000/api/getGoodList',
+
+    request({
+      url: '/getGoodList',
       success: res => {
+        console.log(res);
         this.setData({
           allGoodList: res.data.data,
           hotGoodList: res.data.data.slice(0, 4)

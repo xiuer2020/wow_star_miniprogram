@@ -1,4 +1,4 @@
-<view class="orde app-page">
+<view class="order app-page">
     <van-nav-bar bind:click-left="navBarClickLeft" fixed border="{{false}}" safe-area-inset-top class="page-nav-bar">
         <view slot="left">
             <text class="iconfont icon-houtui pr-sm"></text>
@@ -34,7 +34,7 @@
         <view slot="title">
             普通快递￥12
         </view>
-        <van-radio-group value="{{ mailType }}" bind:change="mailTypeUpda">
+        <van-radio-group value="{{ postType }}" bind:change="postTypeUpda">
             <van-radio checked-color="{{cPLg}}" name="普通快递" custom-class="radi-cust"></van-radio>
         </van-radio-group>
     </van-cell>
@@ -45,7 +45,7 @@
         <view slot="label">
             推荐购买10套以上， 选择到付或者联系客服
         </view>
-        <van-radio-group value="{{ mailType }}" bind:change="mailTypeUpda">
+        <van-radio-group value="{{ postType }}" bind:change="postTypeUpda">
             <van-radio checked-color="{{cPLg}}" name="顺丰到付" custom-class="radi-cust"></van-radio>
         </van-radio-group>
     </van-cell>
@@ -56,7 +56,7 @@
         <view slot="label">
             如果无需寄回请选择此项
         </view>
-        <van-radio-group value="{{ mailType }}" bind:change="mailTypeUpda">
+        <van-radio-group value="{{ postType }}" bind:change="postTypeUpda">
             <van-radio checked-color="{{cPLg}}" name="不寄回" custom-class="radi-cust"></van-radio>
         </van-radio-group>
     </van-cell>
@@ -68,7 +68,7 @@
             <text>购买说明</text>
         </view>
     </van-cell>
-    <van-popup show="{{buyIntrShowStat}}" custom-class="buy-intr-cust" class="buy-intr">
+    <van-popup show="{{buyIntrShowStatus}}" custom-class="buy-intr-cust" class="buy-intr">
         <view style="text-align:center;">购买说明</view>
         <view class="buy-intr-list" style="padding: 8px 24px 16px;color:#323232;">
             <view class="item" style="line-height: 24px">
@@ -90,7 +90,7 @@
         <van-button block custom-class="cofi-butt" bind:tap="buyIntrClos">确认</van-button>
     </van-popup>
     <view class="foot-btn-layo">
-        <van-button block color="{{cPLg}}" bind:click="comfirmOrde">微信支付</van-button>
+        <van-button block color="{{cPLg}}" bind:click="comfirmorder">微信支付</van-button>
     </view>
     <van-toast class="" id="van-toast"></van-toast>
 </view>

@@ -1,17 +1,17 @@
 {
     "pages": [
+        "pages/login/login",
         "pages/home/index/index",
         "pages/home/good/good",
         "pages/me/index/index",
         "pages/me/emit-addr/emit-addr",
-        "pages/me/orde/orde",
-        "pages/home/orde/orde",
+        "pages/me/order/order",
+        "pages/home/order/order",
         "pages/home/rank-list/rank-list",
         "pages/me/feed/feed",
         "pages/me/post-pay/post-pay",
         "pages/me/addr/addr",
         "pages/me/add-addr/add-addr",
-        "pages/logi/logi",
         "pages/demo/demo"
     ],
     "usingComponents": {

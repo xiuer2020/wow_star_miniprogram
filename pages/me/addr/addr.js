@@ -7,7 +7,7 @@ Page({
     data: {
       cPLg: app.project.cPLg,
       // 主题色
-      addrs: [],
+      addresses: [],
       // 收货地址
     },
     Toast,
@@ -19,7 +19,7 @@ Page({
     },
     navBarClickLeft:function(){
       const routes = getCurrentPages();
-      const redirectTargetList = ['pages/me/add-addr/add-addr',  'pages/home/orde/orde'];
+      const redirectTargetList = ['pages/me/add-addr/add-addr',  'pages/home/order/order'];
       let delta;
       for(let i = routes.length-1; i>=0; i--){
         if(redirectTargetList.includes(routes[i].route)){
@@ -60,7 +60,7 @@ Page({
     onShow: function () {
       console.log(getCurrentPages());
       this.setData({
-        addrs: app.user.addrs
+        addresses: app.user.addresses
       })
     },
 

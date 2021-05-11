@@ -72,10 +72,10 @@ component_1.VantComponent({
     },
     toggleItem: function (active) {
       this.children.forEach(function (item, index) {
-        var showPopup = item.data.showPopup;
+        var showpopup = item.data.showpopup;
         if (index === active) {
           item.toggle();
-        } else if (showPopup) {
+        } else if (showpopup) {
           item.toggle(false, { immediate: true });
         }
       });

@@ -7,9 +7,9 @@ Page({
   data: {
     cPLg: app.project.cPLg,
     // 主题色
-    mailType: null,
+    postType: null,
     // 寄件类型
-    buyIntrShowStat: false,
+    buyIntrShowStatus: false,
     // 购买说明
     good: {},
     // 购买的产品
@@ -29,22 +29,22 @@ Page({
     })
   },
   // 页面导航栏
-  mailTypeUpda: function (e) {
+  postTypeUpda: function (e) {
     this.setData({
-      mailType: e.detail
+      postType: e.detail
     })
   },
   // 寄件类型更新
-  comfirmOrde: function () {
-    if(this.data.good && app.orde.purcQuan && this.data.mailType && this.data.currentAddr){
+  comfirmorder: function () {
+    if(this.data.good && app.order.purchaseQuantity && this.data.postType && this.data.currentAddr){
       wx.request({
-        url: 'http://127.0.0.1:8000/api/comfirmOrde',
+        url: 'http://127.0.0.1:8000/api/comfirmorder',
         data: {
           token: app.user.token,
           goodId: this.data.good.id,
-          goodQuantity: app.orde.purcQuan,
+          goodQuantity: app.order.purchaseQuantity,
           addr: `${this.data.currentAddr.region}${this.data.currentAddr.detail_addr}`,
-          mailingType: this.data.mailType
+          mailingType: this.data.postType
         },
         success: res => {
           console.log(res);
@@ -61,19 +61,19 @@ Page({
 
     return
     wx.navigateTo({
-      url: '/pages/logi/logi',
+      url: '/pages/login/login',
     })
   },
   // 确认订单
   buyIntrShow: function () {
     this.setData({
-      buyIntrShowStat: true
+      buyIntrShowStatus: true
     })
   },
   // 购买说明展示
   buyIntrClos: function () {
     this.setData({
-      buyIntrShowStat: false
+      buyIntrShowStatus: false
     })
   },
   // 购买说明关闭
@@ -89,11 +89,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    const currentAddr = app.user.addrs.find(x => x.current_addr == 1);
+    const currentAddr = app.user.addresses.find(x => x.current_addr == 1);
     this.setData({
-      good: app.orde.seleItem,
+      good: app.order.selectedGood,
       currentAddr,
-      purcQuan: app.orde.purcQuan
+      purchaseQuantity: app.order.purchaseQuantity
     })
   },
   /**

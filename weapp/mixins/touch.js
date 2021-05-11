@@ -14,7 +14,7 @@ function getDirection(x, y) {
 }
 exports.touch = Behavior({
   methods: {
-    resetTouchStatus: function () {
+    resetTouchStatusus: function () {
       this.direction = '';
       this.deltaX = 0;
       this.deltaY = 0;
@@ -22,7 +22,7 @@ exports.touch = Behavior({
       this.offsetY = 0;
     },
     touchStart: function (event) {
-      this.resetTouchStatus();
+      this.resetTouchStatusus();
       var touch = event.touches[0];
       this.startX = touch.clientX;
       this.startY = touch.clientY;

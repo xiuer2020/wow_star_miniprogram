@@ -1,3 +1,32 @@
+# user 用户
+appid微信唯一标志符
+token用户身份验证Sanctum生成
+address用户地址
+
+
+# project项目
+cPLg主题色
+
+# order 订单
+purchaseQuantity 购买数量
+postType邮递类型
+
+# miscellaneous 杂
+status 状态
+
+# vant 框架vant
+popup 弹出框
+
+# methods 方法
+ConvertTo 转换成
+returnToPreviousPage 返回上一页
+
+
+
+
+
+
+
 appid:wx21e267e686ad39de
 @c-p-lg:#0d0d0d
 @bdc-md:#d4d4d5

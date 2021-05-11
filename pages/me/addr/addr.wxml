@@ -6,8 +6,8 @@
         </view>
     </van-nav-bar>
     <van-empty description="暂无订单" custom-class="empt-cust" class="empt" wx:if="{{false}}"></van-empty>
-    <van-cell-goup class="addrs">
-        <van-cell wx-else label="{{item.region}} {{item.detail_addr}}" is-link bind:tap="emitAddr" data-item="{{item}}" wx:for="{{addrs}}">
+    <van-cell-goup class="addresses">
+        <van-cell wx-else label="{{item.region}} {{item.detail_addr}}" is-link bind:tap="emitAddr" data-item="{{item}}" wx:for="{{addresses}}">
             <view slot="title">
                 <text class="iconfont icon-iconset0391 mr-base" wx:if="{{item.current_addr == 1}}"></text>
                 <text>{{item.name}} {{item.phone}}</text>

@@ -1,23 +1,26 @@
 //全局加载提示框
-var ajaxTimes = 0
+
+
 export const request = (params) => {
+    var ajaxTimes = 0;
+    let app = getApp();
     ajaxTimes++
     wx.showLoading({
         title: '加载中',
         mask: true
     })
-    const urlbase = 'https://equip.dghclw.com/api';
-    const token = wx.getStorageSync('token');
+    const baseUrl = 'http://api.wow.com/api';
+    const token = app.user.token;
+    let header;
     if (token) {
-        var header = {
+        header = {
             "Authorization": 'Bearer ' + token
         }
     }
-    console.log(params.url)
     return new Promise((resolve, reject) => {
         wx.request({
             ...params,
-            url: urlbase + params.url,
+            url: baseUrl + params.url,
             header: header,
             success: (result) => {
                 resolve(result.data.data)
@@ -32,5 +35,6 @@ export const request = (params) => {
                 }
             }
         })
+        header = null;
     })
 }

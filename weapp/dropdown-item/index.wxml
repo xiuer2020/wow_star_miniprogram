@@ -6,7 +6,7 @@
   style="{{ wrapperStyle }}"
 >
   <van-popup
-    show="{{ showPopup }}"
+    show="{{ showpopup }}"
     custom-style="position: absolute;{{ popupStyle }}"
     overlay-style="position: absolute;"
     overlay="{{ overlay }}"

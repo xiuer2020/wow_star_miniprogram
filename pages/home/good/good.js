@@ -1,6 +1,6 @@
 const {
     counDownFormDate
-} = require('../../../utils/utils.js')
+} = require('../../../utils/index.js')
 import Toast from '../../../miniprogram_npm/@vant/weapp/toast/toast';
 const app = getApp();
 Page({
@@ -41,7 +41,7 @@ Page({
         })
     },
     // 进入首页
-    popuOverClic: function () {
+    popupOverClic: function () {
         this.setData({
             orderShow: false
         })
@@ -53,12 +53,12 @@ Page({
         })
     },
     // 立即购买
-    toOrde: function () {
+    toorder: function () {
         if (this.data.numb) {
-            app.orde.purcQuan = this.data.numb;
+            app.order.purchaseQuantity = this.data.numb;
             // 更新购买数量
             wx.navigateTo({
-                url: '/pages/home/orde/orde',
+                url: '/pages/home/order/order',
             })
         } else {
             return Toast('请选择购买数量');
@@ -86,9 +86,9 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        let timeRema = Math.floor((new Date(app.orde.seleItem.deadline).getTime() - Date.now()) / 1000);
+        let timeRema = Math.floor((new Date(app.order.selectedGood.deadline).getTime() - Date.now()) / 1000);
         this.setData({
-            good: app.orde.seleItem,
+            good: app.order.selectedGood,
             countDownText: counDownFormDate(timeRema)
         })
 

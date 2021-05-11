@@ -1,42 +1,13 @@
-import Toast from '../../../miniprogram_npm/@vant/weapp/toast/toast';
-const app = getApp();
-// pages/me/me.js
+// pages/home/order/order.js
 Page({
+
     /**
      * 页面的初始数据
      */
     data: {
-        footTabbInde: 1,
-        // 底部选项栏下标
-        cPLg: null
-        // 主题色
+
     },
-    Toast,
-    naviorder: function(){
-        wx.navigateTo({
-          url: '/pages/me/order/order',
-        })
-    },
-    // 进入我的订单
-    naviAddr: function(){
-        wx.navigateTo({
-          url: '/pages/me/addr/addr',
-        })
-    },
-    // 进入我的地址
-    naviFeed: function(){
-        wx.navigateTo({
-          url: '/pages/me/feed/feed',
-        })
-    },
-    // 进入意见反馈
-    naviPostPay: function(){
-        console.log('ente');
-        wx.navigateTo({
-          url: '/pages/me/post-pay/post-pay',
-        })
-    },
-    // 进入邮费补缴
+
     /**
      * 生命周期函数--监听页面加载
      */
@@ -55,10 +26,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        this.setData({
-            cPLg: app.project.cPLg
-        })
-        // 更新全局变量
+
     },
 
     /**
