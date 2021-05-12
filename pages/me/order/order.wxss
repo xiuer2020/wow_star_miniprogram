@@ -1,1 +1,14 @@
-/* pages/me/order/order.wxss */
+/* 通用样式 */
+.page-nav-bar .text {
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.page-nav-bar .icon-houtui {
+    vertical-align: middle;
+}
+
+/* .me .page-nav-bar .text{ */
+.order {
+    padding-top: 66px;
+}

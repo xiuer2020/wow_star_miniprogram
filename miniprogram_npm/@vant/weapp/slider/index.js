@@ -45,16 +45,16 @@ component_1.VantComponent({
       if (this.data.disabled) return;
       this.touchStart(event);
       this.startValue = this.format(this.value);
-      this.dragStatusus = 'start';
+      this.dragStatus = 'start';
     },
     onTouchMove: function (event) {
       var _this = this;
       if (this.data.disabled) return;
-      if (this.dragStatusus === 'start') {
+      if (this.dragStatus === 'start') {
         this.$emit('drag-start');
       }
       this.touchMove(event);
-      this.dragStatusus = 'draging';
+      this.dragStatus = 'draging';
       utils_1.getRect(this, '.van-slider').then(function (rect) {
         var diff = (_this.deltaX / rect.width) * _this.getRange();
         _this.newValue = _this.startValue + diff;
@@ -63,7 +63,7 @@ component_1.VantComponent({
     },
     onTouchEnd: function () {
       if (this.data.disabled) return;
-      if (this.dragStatusus === 'draging') {
+      if (this.dragStatus === 'draging') {
         this.updateValue(this.newValue, true);
         this.$emit('drag-end');
       }

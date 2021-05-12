@@ -5,9 +5,9 @@
             <text class="text">哇哦星球wowstar</text>
         </view>
     </van-nav-bar>
-    <van-empty description="需要获取您的头像和昵称" custom-class="empt-cust" class="empt">
-        <view class="login-btn-layo" bind:tap="popupShow">
-            <van-button color="#07c160" custom-class="empt-btn-cust" bind:tap="login">微信授权登录</van-button>
+    <van-empty description="需要获取您的头像和昵称" custom-class="empt-custom" class="empt">
+        <view class="login-btn-layout" bind:tap="popupShow">
+            <van-button color="#07c160" custom-class="empt-btn-custom" bind:tap="login">微信授权登录</van-button>
         </view>
     </van-empty>
 </view>

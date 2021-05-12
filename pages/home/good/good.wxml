@@ -6,12 +6,12 @@
         </view>
     </van-nav-bar>
 
-    <view class="deta-imag-layo">
+    <view class="deta-image-layout">
         <image src="{{good.cover_image}}"></image>
     </view>
-    <van-row custom-class="btn-layo-cust" gutter="12" class="btn-layo">
+    <van-row custom-class="btn-layout-custom" gutter="12" class="btn-layout">
         <van-col span="12">
-            <van-button color="#000000" block bind:tap="enteRankList">排行榜</van-button>
+            <van-button color="#000000" block bind:tap="enteRankingList">排行榜</van-button>
         </van-col>
         <van-col span="12">
             <van-button color="#000000" block plain>{{countDownText}}</van-button>
@@ -21,74 +21,75 @@
         <view class="titl">
             {{good.owner}}<text> | </text>{{good.name}}
         </view>
-        <view class="labe c-text-md pt-xs">已售出{{good.sale_quantity}}套</view>
-        <view class="desc c-text-sm">{{good.description}}</view>
+        <view class="label c-text-md pt-xs">已售出{{good.sale_quantity}}套</view>
+        <view class="description c-text-sm">{{good.description}}</view>
     </view>
-    <view class="encl">
+    <view class="common-problem">
     </view>
-    <view class="foot-btn-layo">
+    <view class="foot-btn-layout">
         <van-button color="#000000" block class="fx1 mr-xs" bind:tap="buyGood">立即购买</van-button>
         <van-button color="#000000" block plain class="fx1" bind:tap="viewDetail">查看详情</van-button>
     </view>
-    <van-popup show="{{ orderShow }}" close-on-click-overlay closeable bind:close="popupOverClic" position="bottom"
-        bind:click-overlay="popupOverClic" class="comf">
+    <van-popup show="{{ orderShow }}" close-on-click-overlay closeable bind:close="popupTap" position="bottom"
+        bind:click-overlay="popupTap" class="comfirm">
         <view class="head">
             {{good.owner}} | {{good.name}}
         </view>
-        <van-cell value="￥ 30" value-class="price-valu-clas">
-            <van-radio-group value="{{ numb }}" slot="title" bind:change="numbUpda">
+        <van-cell value="￥ 30" value-class="price-value-clas">
+            <van-radio-group value="{{ purchaseQuantity }}" slot="title" bind:change="purchaseQuantityUpdate">
                 <van-radio checked-color="{{cPLg}}" name="{{1}}">1本</van-radio>
             </van-radio-group>
         </van-cell>
-        <van-cell value="￥ 3000" value-class="price-valu-clas">
-            <van-radio-group value="{{ numb }}" slot="title" bind:change="numbUpda">
+        <van-cell value="￥ 3000" value-class="price-value-clas">
+            <van-radio-group value="{{ purchaseQuantity }}" slot="title" bind:change="purchaseQuantityUpdate">
                 <van-radio checked-color="{{cPLg}}" name="{{100}}">100本</van-radio>
             </van-radio-group>
         </van-cell>
-        <van-cell value="￥ 15600" value-class="price-valu-clas">
-            <van-radio-group value="{{ numb }}" slot="title" bind:change="numbUpda">
+        <van-cell value="￥ 15600" value-class="price-value-clas">
+            <van-radio-group value="{{ purchaseQuantity }}" slot="title" bind:change="purchaseQuantityUpdate">
                 <van-radio checked-color="{{cPLg}}" name="{{520}}">520本</van-radio>
             </van-radio-group>
         </van-cell>
-        <van-cell value="￥ 30" value-class="price-valu-clas">
-            <van-radio-group value="{{ numb }}" slot="title" bind:change="numbUpda">
+        <van-cell value="￥ 30" value-class="price-value-clas">
+            <van-radio-group value="{{ purchaseQuantity }}" slot="title" bind:change="purchaseQuantityUpdate">
                 <van-radio checked-color="{{cPLg}}" name="{{1314}}">1314本</van-radio>
             </van-radio-group>
         </van-cell>
-        <van-cell value="￥ 30" value-class="price-valu-clas">
-            <van-radio-group value="{{ numb }}" slot="title" bind:change="numbUpda">
+        <van-cell value="￥ 30" value-class="price-value-clas">
+            <van-radio-group value="{{ purchaseQuantity }}" slot="title" bind:change="purchaseQuantityUpdate">
                 <van-radio checked-color="{{cPLg}}" name="{{1314}}">1314本</van-radio>
             </van-radio-group>
         </van-cell>
-        <van-cell value="￥ 30" value-class="price-valu-clas">
-            <van-radio-group value="{{ numb }}" slot="title" bind:change="numbUpda">
+        <van-cell value="￥ 30" value-class="price-value-clas">
+            <van-radio-group value="{{ purchaseQuantity }}" slot="title" bind:change="purchaseQuantityUpdate">
                 <van-radio checked-color="{{cPLg}}" name="{{1314}}">1314本</van-radio>
             </van-radio-group>
         </van-cell>
-        <van-cell value="￥ 30" value-class="price-valu-clas">
-            <van-radio-group value="{{ numb }}" slot="title" bind:change="numbUpda">
+        <van-cell value="￥ 30" value-class="price-value-clas">
+            <van-radio-group value="{{ purchaseQuantity }}" slot="title" bind:change="purchaseQuantityUpdate">
                 <van-radio checked-color="{{cPLg}}" name="{{1314}}">1314本</van-radio>
             </van-radio-group>
         </van-cell>
-        <van-cell value="￥ 30" value-class="price-valu-clas">
-            <van-radio-group value="{{ numb }}" slot="title" bind:change="numbUpda">
+        <van-cell value="￥ 30" value-class="price-value-clas">
+            <van-radio-group value="{{ purchaseQuantity }}" slot="title" bind:change="purchaseQuantityUpdate">
                 <van-radio checked-color="{{cPLg}}" name="{{1314}}">1314本</van-radio>
             </van-radio-group>
         </van-cell>
         <view class="more base-flex van-hairline--top">
-            <view class="inpu-layo fx1 base-flex aic">
-                <input type="number" model:value="{{price}}" placeholder="其他套数" />
+            <view class="inpu-layout fx1 base-flex aic">
+                <input type="purchaseQuantity" modulesel:value="{{price}}" placeholder="其他套数" />
             </view>
-            <view class="price-valu fx1">
+            <view class="price-value fx1">
                 {{price*100}}￥
             </view>
         </view>
-        <view class="popup-btn-layo">
-            <van-button color="#000000" block bind:tap="toorder">立即购买</van-button>
+        <view class="popup-btn-layout">
+            <van-button color="#000000" block bind:tap="toOrder">立即购买</van-button>
         </view>
     </van-popup>
     <van-toast id="van-toast" selector="#van-toast"></van-toast>
-    <van-popup show="{{ loadShow }}" class="load-layo">
-        <van-loading custom-class="load-cust"></van-loading>
+    <van-popup show="{{ loadingShow }}" class="load-layout">
+        <van-loading custom-class="load-custom"></van-loading>
     </van-popup>
+    <van-dialog id="van-dialog" selector="#van-dialog" />
 </view>

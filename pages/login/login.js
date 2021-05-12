@@ -64,9 +64,10 @@ Page({
                         }
                     })
                 }).then(res => {
-                    console.log('获取token成功');
                     app.user.token = res.token;
-                    wx.navigate()
+                    const routes = getCurrentPages();
+                    const redirectTargetList = routes.map(x => x. route);
+                    returnToPreviousPage(redirectTargetList);
                 });
             },
             fail: err => {

@@ -1,0 +1,21 @@
+<view class="address app-page">
+    <van-nav-bar bind:click-left="navBarClickLeft" fixed border="{{false}}" class="page-nav-bar">
+        <view slot="left">
+            <text class="iconfont icon-houtui pr-sm"></text>
+            <text class="text">我的收货地址</text>
+        </view>
+    </van-nav-bar>
+    <van-empty description="暂无订单" custom-class="empt-custom" class="empt" wx:if="{{false}}"></van-empty>
+    <van-cell-goup class="addresses">
+        <van-cell wx-else label="{{item.region}} {{item.detail_address}}" is-link bind:tap="emitAddress" data-item="{{item}}" wx:for="{{addresses}}">
+            <view slot="title">
+                <text class="iconfont icon-iconset0391 mr-base" wx:if="{{item.current_address == 1}}"></text>
+                <text>{{item.name}} {{item.phone}}</text>
+            </view>
+        </van-cell>
+    </van-cell-goup>
+    <view bind:tap="addAddress" class="add-butt-layout"
+        style="position:fixed; left: 0; bottom: 0; box-sizing: border-box; padding: 8px; width:100%;">
+        <van-button color="{{cPLg}}" block>添加收货地址</van-button>
+    </view>
+</view>

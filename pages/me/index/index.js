@@ -6,31 +6,31 @@ Page({
      * 页面的初始数据
      */
     data: {
-        footTabbInde: 1,
+        footTabbarIndex: 1,
         // 底部选项栏下标
         cPLg: null
         // 主题色
     },
     Toast,
-    naviorder: function(){
+    navigateOrder: function(){
         wx.navigateTo({
           url: '/pages/me/order/order',
         })
     },
     // 进入我的订单
-    naviAddr: function(){
+    navigateAddress: function(){
         wx.navigateTo({
-          url: '/pages/me/addr/addr',
+          url: '/pages/me/address/address',
         })
     },
     // 进入我的地址
-    naviFeed: function(){
+    navigateFeed: function(){
         wx.navigateTo({
           url: '/pages/me/feed/feed',
         })
     },
     // 进入意见反馈
-    naviPostPay: function(){
+    navigatePostPay: function(){
         console.log('ente');
         wx.navigateTo({
           url: '/pages/me/post-pay/post-pay',

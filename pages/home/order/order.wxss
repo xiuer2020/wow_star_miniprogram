@@ -1,1 +1,48 @@
-/* pages/home/order/order.wxss */
+/* 通用样式 */
+.modules-cell {
+    padding: 10px 20px;
+}
+
+.radio-custom {
+    flex-direction: row-reverse;
+}
+
+.page-nav-bar .text {
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.page-nav-bar .icon-houtui {
+    vertical-align: middle;
+}
+
+/* 样式 */
+.order {
+    padding-top: 66px;
+}
+
+.van-cell__title.title-class{
+    flex: 9;
+}
+
+.foot-btn-layout{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+}
+
+.buy-introdution-custom{
+    width: 90%;
+    padding-top: 24px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+
+
+.buy-introdution .cofi-butt{
+    color: #ff1515;
+}

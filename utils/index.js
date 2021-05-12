@@ -1,4 +1,4 @@
-    function counDownFormDate(num) {
+    function getCountDown(num) {
         const date = Math.floor(num / (60 * 60 * 24)),
             hour = Math.floor((num / (60 * 60)) % 24),
             min = Math.floor((num / 60) % 60),
@@ -21,24 +21,24 @@
         });
     }
 
-    function convertToString(valu) {
-        if (valu.toString() === '[object Object]') {
-            return JSON.stringify(valu);
+    function convertToString(value) {
+        if (value.toString() === '[object Object]') {
+            return JSON.stringify(value);
         } else {
-            return valu;
+            return value;
         }
     }
 
-    function convertToJson(valu) {
-        if (valu.toString() === '[object Object]') {
-            return valu;
+    function convertToJson(value) {
+        if (value.toString() === '[object Object]') {
+            return value;
         } else {
-            return JSON.parse(valu);
+            return JSON.parse(value);
         }
     }
     // 倒计时整理
-    module.exports = {
-        counDownFormDate,
+    export default {
+        getCountDown,
         returnToPreviousPage,
         // 返回上一页
         convertToString,

@@ -13,6 +13,8 @@ postType邮递类型
 
 # miscellaneous 杂
 status 状态
+Indicator 指示
+
 
 # vant 框架vant
 popup 弹出框
@@ -20,6 +22,12 @@ popup 弹出框
 # methods 方法
 ConvertTo 转换成
 returnToPreviousPage 返回上一页
+countDown 倒计时
+
+# css
+rankingList 排行榜
+common problem常见问题
+
 
 
 
@@ -30,12 +38,12 @@ returnToPreviousPage 返回上一页
 appid:wx21e267e686ad39de
 @c-p-lg:#0d0d0d
 @bdc-md:#d4d4d5
-footTabbHeig: 50px;
+footTabbarHeig: 50px;
 headNabBarHeig: 46px;
-enclosure 附件
+common-problemosure 附件
 Ranking List 排行榜
 Top three前三
-Serial number序号
+Serial purchaseQuantity序号
 rough 粗略
 Mailing type 寄件类型
 Purchase instructions 购买说明

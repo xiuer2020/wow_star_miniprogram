@@ -1,7 +1,8 @@
 const {
-    counDownFormDate
+    getCountDown
 } = require('../../../utils/index.js')
 import Toast from '../../../miniprogram_npm/@vant/weapp/toast/toast';
+import Dialog from '../../../miniprogram_npm/@vant/weapp/dialog/dialog';
 const app = getApp();
 Page({
     /**
@@ -14,34 +15,35 @@ Page({
         // 订单展示状态
         price: '',
         // 订单额
-        numb: null,
+        purchaseQuantity: 1,
         // 订单数   
-        countDownText: '',
+        countDownText: '0天0时0分0秒',
         // 倒计时剩余时间
-        loadShow: false,
+        loadingShow: false,
         // 加载样式展示状态
         good: null
         // 选中商品
     },
-    numbUpda: function (e) {
+    purchaseQuantityUpdate: function (e) {
         this.setData({
-            numb: e.detail
+            purchaseQuantity: e.detail
         })
     },
     // 数量更新
-    enteRankList: function () {
+    enteRankingList: function () {
         // wx.navigateTo({
         wx.navigateTo({
-            url: '/pages/home/rank-list/rank-list',
+            url: '/pages/home/ranking-list/ranking-list',
         })
     },
+    // 进入排行榜
     navBarClickLeft: function () {
         wx.switchTab({
             url: '/pages/home/index/index',
         })
     },
     // 进入首页
-    popupOverClic: function () {
+    popupTap: function () {
         this.setData({
             orderShow: false
         })
@@ -53,9 +55,22 @@ Page({
         })
     },
     // 立即购买
-    toorder: function () {
-        if (this.data.numb) {
-            app.order.purchaseQuantity = this.data.numb;
+    toOrder: function () {
+
+        if (!app.user.token) {
+            Dialog.confirm({
+                title: '温馨提示',
+                message: '请先进行登录',
+            }).then(res => {
+                wx.navigateTo({
+                    url: '/pages/home/order/order',
+                })
+            }, () => {})
+            return;
+        }
+
+        if (this.data.purchaseQuantity) {
+            app.order.purchaseQuantity = this.data.purchaseQuantity;
             // 更新购买数量
             wx.navigateTo({
                 url: '/pages/home/order/order',
@@ -67,7 +82,7 @@ Page({
 
     },
     // 进入订单页
-    viewDetail: function(){
+    viewDetail: function () {
         Toast.fail('未定义');
     },
     // 查看详情
@@ -88,8 +103,7 @@ Page({
     onShow: function () {
         let timeRema = Math.floor((new Date(app.order.selectedGood.deadline).getTime() - Date.now()) / 1000);
         this.setData({
-            good: app.order.selectedGood,
-            countDownText: counDownFormDate(timeRema)
+            good: app.order.selectedGood
         })
 
         let timer = setInterval(() => {
@@ -99,7 +113,7 @@ Page({
                 timeRema = null;
             }
             this.setData({
-                countDownText: counDownFormDate(timeRema)
+                countDownText: getCountDown(timeRema)
             })
             timeRema--
         }, 1000)

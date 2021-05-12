@@ -1,2 +1,10 @@
-<!--pages/me/order/order.wxml-->
-<text>pages/me/order/order.wxml</text>
+<view class="order app-page">
+    <van-nav-bar bind:click-left="navBarClickLeft" fixed border="{{false}}" class="page-nav-bar">
+        <view slot="left">
+            <text class="iconfont icon-houtui pr-sm"></text>
+            <text class="text">我的订单</text>
+        </view>
+    </van-nav-bar>
+    <van-empty description="暂无订单" custom-class="empt-custom" class="empt" wx:if="{{false}}"></van-empty>
+    <van-empty description="暂无订单" custom-class="empt-custom" class="empt" wx:else></van-empty>
+</view>

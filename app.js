@@ -4,7 +4,6 @@ import {
   request
 } from "./utils/request.js"
 const lodash = require('lodash');
-
 App({
   user: {
     openid: null,
@@ -13,7 +12,7 @@ App({
     // 验证信息
     addresses: null,
     // 默认地址
-    emitAddr: null,
+    emitAddress: null,
     // 编辑的地址
     encryptedData: null,
     // 用户加密数据
@@ -29,7 +28,7 @@ App({
     // @tabb-heig: 50px;
   },
   order: {
-    selectedGood: null,
+    selectedGood: {},
     // 选中的商品
     purchaseQuantity: 0,
     // 购买数量
@@ -43,7 +42,7 @@ App({
 
     /*  promise.then(() => {
        wx.request({
-         url: 'http://127.0.0.1:8000/api/getAddr',
+         url: 'http://127.0.0.1:8000/api/getAddress',
          data: {
            token: this.user.token
          },

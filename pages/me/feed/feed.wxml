@@ -1,15 +1,15 @@
 <view class="feed app-page">
-    <van-nav-bar bind:click-left="navBarClickLeft" fixed border="{{false}}" custom-class="page-nav-bar-cust"
+    <van-nav-bar bind:click-left="navBarClickLeft" fixed border="{{false}}" custom-class="page-nav-bar-custom"
         class="page-nav-bar">
         <view slot="left">
             <text class="iconfont icon-houtui pr-sm"></text>
             <text class="text">意见反馈</text>
         </view>
     </van-nav-bar>
-    <view class="feed-text-layo">
-        <textarea placeholder="请输入您需要反馈的内容" class="feed-text" model:value="{{feed}}" bindinput="feedbackInput"></textarea>
+    <view class="feed-text-layout">
+        <textarea placeholder="请输入您需要反馈的内容" class="feed-text" modulesel:value="{{feed}}" bindicatornput="feedbackInput"></textarea>
     </view>
-    <view class="subm-butt-layo" bind:tap="subm"
+    <view class="submit-butt-layout" bind:tap="submit"
         style="position: fixed; left: 8px; right: 8px; bottom: 8px; box-sizing: border-box; ">
         <van-button block color="{{cPLg}}">提交</van-button>
     </view>

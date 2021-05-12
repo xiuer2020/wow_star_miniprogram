@@ -1,0 +1,52 @@
+/* 通用样式 */
+.ranking-list{
+    padding-top: 66px;
+}
+.ranking-list .page-nav-bar .text {
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.ranking-list .page-nav-bar .icon-houtui {
+    vertical-align: middle;
+}
+
+/* 样式 */
+.ranking-list .top-three{
+    text-align: center;
+    padding: 0 20px;
+}
+.ranking-list .top-three .item{
+    padding: 16px 0 12px;
+    box-shadow: 0px 0px 1px 1px #f5f4f4;
+}
+
+.ranking-list .top-three .titl{
+    font-size: 16px;
+}
+
+.ranking-list .top-three .image-layout{
+    margin-top: 8px;
+    margin-bottom: 16px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #cccccc;
+}
+
+.ranking-list .list{
+    padding: 16px 20px;
+}
+
+.ranking-list .list .item{
+    height: 52px;
+}
+
+.ranking-list .list .image-layout{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #cccccc;
+}

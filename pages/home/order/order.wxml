@@ -1,2 +1,96 @@
-<!--pages/home/order/order.wxml-->
-<text>pages/home/order/order.wxml</text>
+<view class="order app-page">
+    <van-nav-bar bind:click-left="navBarClickLeft" fixed border="{{false}}" safe-area-inset-top class="page-nav-bar">
+        <view slot="left">
+            <text class="iconfont icon-houtui pr-sm"></text>
+            <text class="text">确认订单</text>
+        </view>
+    </van-nav-bar>
+
+    <van-cell wx:if="{{currentAddress}}" label="{{currentAddress.region}} {{currentAddress.detail_address}}" is-link bind:tap="toAddress"
+        data-item="{{item}}" class="address">
+        <view slot="title">
+            <text class="iconfont icon-iconset0391 mr-base" wx:if="{{currentAddress.current_address == 1}}"></text>
+            <text>{{currentAddress.name}} {{currentAddress.phone}}</text>
+        </view>
+    </van-cell>
+    <van-cell wx:else border="{{false}}" is-link custom-class="modules-cell" class="address"  bind:tap="toAddress">
+        <view slot="title">
+            <text class="iconfont icon-iconset0391 pr-base"></text>
+            请设置收货地址
+        </view>
+    </van-cell>
+
+    <view class="roug base-flex" style="margin: 0 20px; padding: 8px; background: #fafafa;">
+        <view class="image-layout fx1 mr-sm" style="height: 88px; background: #ccc;"></view>
+        <view class="base-flex fx4 fxdc jcsb">
+            <view class="titl">{{good.owner}} | {{good.name}}</view>
+            <view class="base-flex jcsb">
+                <text>￥40</text>
+                <text>x 1套</text>
+            </view>
+        </view>
+    </view>
+    <van-cell border="{{false}}" custom-class="modules-cell" class="norm">
+        <view slot="title">
+            普通快递￥12
+        </view>
+        <van-radio-group value="{{ postType }}" bind:change="postTypeUpdate">
+            <van-radio checked-color="{{cPLg}}" name="普通快递" custom-class="radio-custom"></van-radio>
+        </van-radio-group>
+    </van-cell>
+    <van-cell use-label-slot title-class="title-class" custom-class="modules-cell" class="sf">
+        <view slot="title">
+            顺丰到付
+        </view>
+        <view slot="label">
+            推荐购买10套以上， 选择到付或者联系客服
+        </view>
+        <van-radio-group value="{{ postType }}" bind:change="postTypeUpdate">
+            <van-radio checked-color="{{cPLg}}" name="顺丰到付" custom-class="radio-custom"></van-radio>
+        </van-radio-group>
+    </van-cell>
+    <van-cell custom-class="modules-cell" class="no-retu" use-label-slot>
+        <view slot="title">
+            不寄回
+        </view>
+        <view slot="label">
+            如果无需寄回请选择此项
+        </view>
+        <van-radio-group value="{{ postType }}" bind:change="postTypeUpdate">
+            <van-radio checked-color="{{cPLg}}" name="不寄回" custom-class="radio-custom"></van-radio>
+        </van-radio-group>
+    </van-cell>
+    <van-cell title="总计" value="￥52" custom-class="modules-cell" class="tota">
+    </van-cell>
+    <van-cell border="{{false}}" custom-class="modules-cell" class="buy-introdutiono-cell">
+        <view slot="title" bind:tap="buyIntrodutionShow" class="c-text-sm">
+            <text class="iconfont icon-shuoming pr-base"></text>
+            <text>购买说明</text>
+        </view>
+    </van-cell>
+    <van-popup show="{{buyIntrodutionShowStatus}}" custom-class="buy-introdution-custom" class="buy-introdution">
+        <view style="text-align:center;">购买说明</view>
+        <view class="buy-introdution-list" style="padding: 8px 24px 16px;color:#323232;">
+            <view class="item" style="line-height: 24px">
+                1、预售商品会在预售期截止后2至4周内发货，请您耐心等候
+            </view>
+            <view class="item" style="line-height: 24px">
+                1、预售商品会在预售期截止后2至4周内发货，请您耐心等候
+            </view>
+            <view class="item" style="line-height: 24px">
+                1、预售商品会在预售期截止后2至4周内发货，请您耐心等候
+            </view>
+            <view class="item" style="line-height: 24px">
+                1、预售商品会在预售期截止后2至4周内发货，请您耐心等候
+            </view>
+            <view class="item" style="line-height: 24px">
+                1、预售商品会在预售期截止后2至4周内发货，请您耐心等候
+            </view>
+        </view>
+        <van-button block custom-class="cofi-butt" bind:tap="buyIntrodutionClose">确认</van-button>
+    </van-popup>
+    <view class="foot-btn-layout">
+        <van-button block color="{{cPLg}}" bind:click="comfirmOrder">微信支付</van-button>
+    </view>
+    <van-toast class="" id="van-toast"></van-toast>
+</view>

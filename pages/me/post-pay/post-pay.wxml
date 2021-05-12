@@ -5,8 +5,8 @@
             <text class="text">邮费补缴</text>
         </view>
     </van-nav-bar>
-    <van-field label="邮费" type="number" placeholder="请输入补缴金额" custom-class="field"></van-field>
-    <view bind:tap="addAddr" class="add-butt-layo"
+    <van-field label="邮费" type="purchaseQuantity" placeholder="请输入补缴金额" custom-class="field"></van-field>
+    <view bind:tap="addAddress" class="add-butt-layout"
         style="position:fixed; left: 0; bottom: 0; box-sizing: border-box; padding: 8px; width:100%;">
         <van-button color="{{cPLg}}" block bind:tap="Toast">微信支付</van-button>
     </view>

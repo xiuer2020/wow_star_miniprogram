@@ -15,12 +15,12 @@
 
 /* 样式 */
 
-.me .head-port-layo{
+.me .head-port-layout{
     padding-top: 30px;
     padding-bottom: 28px;
 }
 
-.me .head-port-layo .head-port{
+.me .head-port-layout .head-port{
    width: 74px;
    height: 74px;
    background: #ccc;

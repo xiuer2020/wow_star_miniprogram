@@ -2,30 +2,30 @@
   <view class="home-head">
     <image src="/assets/images/head-home.png" class="imag"></image>
   </view>
-  <swiper autoplay="{{true}}" circular bindchange="swipChan" class="home-swip">
+  <swiper autoplay="{{true}}" circular bindchange="swiperChange" class="home-swiper">
     <swiper-item>
-      <!-- <image src="/assets/images/swip.png" class="swip-imag"></image> -->
+      <!-- <image src="/assets/images/swip.png" class="swiper-image"></image> -->
       1
     </swiper-item>
     <swiper-item>2</swiper-item>
     <swiper-item>3</swiper-item>
   </swiper>
-  <view class="indi-layo" style="position: relative;">
-    <view class="indi" style="position: absolute; right: 20px; bottom: 20px; z-index: 1;">
-      <text style="color: #f1e721;">{{indiText}}</text><text class="c-white"> / 4</text>
+  <view class="indicator-layout" style="position: relative;">
+    <view class="indicator" style="position: absolute; right: 20px; bottom: 20px; z-index: 1;">
+      <text style="color: #f1e721;">{{indicatorText}}</text><text class="c-white"> / 4</text>
     </view>
   </view>
 
   <van-tabs nav-class="tabs-nav" tab-class="tabs-tab" color="{{cPLg}}" line-width="{{26}}" class="tabs">
     <van-tab title="最新上架">
-      <view class="tabs-cont">
+      <view class="tabs-content">
         <van-row gutter="8">
           <van-col span="12" wx:for="{{hotGoodList}}" wx:key="*this" data-item="{{item}}" custom-class="good"
-            bind:tap="toGoodDeta">
-            <view class="imag-layo">
+            bind:tap="toGoodDetail">
+            <view class="image-layout">
               <image src="{{item.cover_image}}" class="imag"></image>
             </view>
-            <van-cell custom-class="tab-desc-cust" use-label-slot border="{{false}}">
+            <van-cell custom-class="tab-description-custom" use-label-slot border="{{false}}">
               <view slot="title">{{item.owner}} | {{item.name}}</view>
               <view slot="label">销量 {{item.sale_quantity}}</view>
             </van-cell>
@@ -34,14 +34,14 @@
       </view>
     </van-tab>
     <van-tab title="《漫游》">
-      <view class="tabs-cont">
+      <view class="tabs-content">
         <van-row gutter="8">
           <van-col span="12" wx:for="{{allGoodList}}" wx:key="*this" data-item="{{item}}" custom-class="good"
-            bind:tap="toGoodDeta">
-            <view class="imag-layo">
+            bind:tap="toGoodDetail">
+            <view class="image-layout">
               <image src="{{item.cover_image}}" class="imag"></image>
             </view>
-            <van-cell custom-class="tab-desc-cust" use-label-slot border="{{false}}">
+            <van-cell custom-class="tab-description-custom" use-label-slot border="{{false}}">
               <view slot="title">{{item.owner}} | {{item.name}}</view>
               <view slot="label">销量 {{item.sale_quantity}}</view>
             </van-cell>

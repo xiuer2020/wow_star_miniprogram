@@ -9,19 +9,6 @@
 }
 
 /* 样式 */
-.login {
+.address {
     padding-top: 66px;
-}
-
-.empt-custom{
-    padding-bottom: 26px;
-}
-
-.empt-custom .login-btn-layout{
-    border-radius: 22px;
-    overflow: hidden;
-}
-
-.empt-custom .empt-btn-custom{
-    width: 290px;
 }

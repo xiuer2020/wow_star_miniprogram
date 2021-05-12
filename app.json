@@ -1,17 +1,17 @@
 {
     "pages": [
-        "pages/login/login",
+        "pages/home/order/order",
         "pages/home/index/index",
         "pages/home/good/good",
-        "pages/me/index/index",
-        "pages/me/emit-addr/emit-addr",
         "pages/me/order/order",
-        "pages/home/order/order",
-        "pages/home/rank-list/rank-list",
+        "pages/login/login",
+        "pages/me/index/index",
+        "pages/me/emit-address/emit-address",
+        "pages/home/ranking-list/ranking-list",
         "pages/me/feed/feed",
         "pages/me/post-pay/post-pay",
-        "pages/me/addr/addr",
-        "pages/me/add-addr/add-addr",
+        "pages/me/address/address",
+        "pages/me/add-address/add-address",
         "pages/demo/demo"
     ],
     "usingComponents": {
@@ -34,14 +34,15 @@
         "van-popup": "@vant/weapp/popup/index",
         "van-empty": "@vant/weapp/empty/index",
         "van-loading": "@vant/weapp/loading/index",
-        "van-toast": "@vant/weapp/toast/index"
+        "van-toast": "@vant/weapp/toast/index",
+        "van-dialog": "@vant/weapp/dialog/index"
     },
     "window": {
         "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "Weixin",
-        "navigationBarTextStyle": "black",
-        "navigationStyle": "custom" 
+        "navigategationBarBackgroundColor": "#fff",
+        "navigategationBarTitleText": "Weixin",
+        "navigategationBarTextStyle": "black",
+        "navigategationStyle": "custom" 
     },
     "tabBar": {
         "color": "#8d9096",
