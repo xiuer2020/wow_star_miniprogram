@@ -1,8 +1,5 @@
 // app.js
 import './utils/fix.js'
-import {
-  request
-} from "./utils/request.js"
 const lodash = require('lodash');
 App({
   user: {
@@ -11,7 +8,7 @@ App({
     token: null,
     // 验证信息
     addresses: null,
-    // 默认地址
+    // 地址
     emitAddress: null,
     // 编辑的地址
     encryptedData: null,

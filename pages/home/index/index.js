@@ -1,5 +1,5 @@
 import Toast from '@vant/weapp/toast/toast';
-import {request} from '../../../utils/request.js';
+import {request} from '../../../utils/index.js';
 const app = getApp();
 Page({
   data: {

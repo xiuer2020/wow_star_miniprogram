@@ -1,10 +1,8 @@
-const app = getApp();
 import {
+    returnToPreviousPage,
     request
-} from '../../utils/request.js';
-import {
-    returnToPreviousPage
 } from '../../utils/index.js';
+const app = getApp();
 Page({
     /**
      * 页面的初始数据
@@ -24,7 +22,6 @@ Page({
         wx.login({
             success: res => {
                 app.user.code = res.code;
-                console.log('获取code成功', app.user);
                 request({
                     url: '/getOpenid',
                     method: 'POST',
@@ -32,17 +29,13 @@ Page({
                         code: app.user.code
                     }
                 }).then(res => {
-                    console.log('获取openid成功');
                     app.user.openid = res.openid;
                     app.user.sessionKey = res.session_key;
-                    return Promise.resolve();
-                }).then((statu) => {
                     return new Promise(resolve => {
                         wx.getUserInfo({
                             success: res => {
                                 app.user.iv = res.iv;
                                 app.user.encryptedData = res.encryptedData;
-                                console.log('获取用户信息成功');
                                 resolve();
                             },
                             fail: err => {
@@ -52,8 +45,7 @@ Page({
                             }
                         })
                     });
-
-                }).then((statu) => {
+                }).then(() => {
                     return request({
                         url: '/login',
                         method: 'POST',
@@ -64,9 +56,18 @@ Page({
                         }
                     })
                 }).then(res => {
-                    app.user.token = res.token;
+                    wx.setStorageSync('token', res.token);
+                    return request({
+                        url: '/getAddress',
+                        method: 'POST',
+                        data: {
+                            openid: app.user.openid
+                        }
+                    })
+                }).then(res => {
+                    app.user.addresses = res;
                     const routes = getCurrentPages();
-                    const redirectTargetList = routes.map(x => x. route);
+                    const redirectTargetList = routes.map(x => x.route);
                     returnToPreviousPage(redirectTargetList);
                 });
             },
@@ -76,81 +77,7 @@ Page({
                 })
             }
         })
-        // const promise = new Promise(resolve => {
-        //     wx.login({
-        //         success: res => {
-        //             console.log(res);
-        //             app.user.code = res.code;
-        //             resolve()
-        //         },
-        //         fail: err => {
-        //             wx.showToast({
-        //                 title: '获取登录code失败'
-        //             })
-        //         }
-        //     })
-        // }).then(() => {
-        //     return new Promise(resolve => {
-        //         wx.request({
-        //             url: 'http://127.0.0.1:8000/api/getOpenid',
-        //             method: 'POST',
-        //             data: {
-        //                 code: app.user.code
-        //             },
-        //             success: res => {
-        //                 app.user.openid = res.data.data.openid;
-        //                 app.user.sessionKey = res.data.data.session_key;
-        //                 resolve('获取openid成功');
-        //             },
-        //             fail: err => {
-        //                 wx.showToast({
-        //                     title: '获取openid失败',
-        //                 })
-        //             }
-        //         })
-        //     });
-        // }).then((statu) => {
-        //     console.log(statu);
-        //     return new Promise(resolve => {
-        //         wx.getUserInfo({
-        //             success: res => {
-        //                 app.user.iv = res.iv;
-        //                 app.user.encryptedData = res.encryptedData
-        //                 resolve('获取用户信息成功');
-        //             },
-        //             fail: err => {
-        //                 wx.showToast({
-        //                     title: '获取用户信息失败',
-        //                 })
-        //             }
-        //         })
-        //     });
 
-        // }).then((statu) => {
-        //     console.log(statu);
-
-        //     wx.request({
-        //         url: 'http://127.0.0.1:8000/api/login',
-        //         method: 'POST',
-        //         data: {
-        //             openid: app.user.openid,
-        //             iv: app.user.iv,
-        //             encryptedData: app.user.encryptedData
-        //         },
-        //         success: res => {
-        //             app.user.token = res.data.data.token;
-        //             wx.setStorage({
-        //                 key: 'token',
-        //                 data: res.data.data.token
-        //             }, )
-        //         },
-        //         fail: err => {
-        //             wx.showToast({
-        //                 title: '登录失败',
-        //             })
-        //         }
-        //     })
-        // })
     },
     // 登录
     navBarClickLeft: function () {

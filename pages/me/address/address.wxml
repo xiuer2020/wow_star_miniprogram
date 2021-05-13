@@ -5,9 +5,9 @@
             <text class="text">我的收货地址</text>
         </view>
     </van-nav-bar>
-    <van-empty description="暂无订单" custom-class="empt-custom" class="empt" wx:if="{{false}}"></van-empty>
-    <van-cell-goup class="addresses">
-        <van-cell wx-else label="{{item.region}} {{item.detail_address}}" is-link bind:tap="emitAddress" data-item="{{item}}" wx:for="{{addresses}}">
+    <van-empty description="暂无收货地址" custom-class="empt-custom" class="empt" wx:if="{{false}}"></van-empty>
+    <van-cell-goup wx-else class="addresses">
+        <van-cell label="{{item.region}} {{item.detail_address}}" is-link bind:tap="emitAddress" data-item="{{item}}" wx:for="{{addresses}}">
             <view slot="title">
                 <text class="iconfont icon-iconset0391 mr-base" wx:if="{{item.current_address == 1}}"></text>
                 <text>{{item.name}} {{item.phone}}</text>

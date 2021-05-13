@@ -77,7 +77,7 @@
         </van-cell>
         <view class="more base-flex van-hairline--top">
             <view class="inpu-layout fx1 base-flex aic">
-                <input type="purchaseQuantity" modulesel:value="{{price}}" placeholder="其他套数" />
+                <input type="purchaseQuantity" model:value="{{price}}" placeholder="其他套数" />
             </view>
             <view class="price-value fx1">
                 {{price*100}}￥

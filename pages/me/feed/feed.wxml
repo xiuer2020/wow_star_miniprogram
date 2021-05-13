@@ -7,7 +7,7 @@
         </view>
     </van-nav-bar>
     <view class="feed-text-layout">
-        <textarea placeholder="请输入您需要反馈的内容" class="feed-text" modulesel:value="{{feed}}" bindicatornput="feedbackInput"></textarea>
+        <textarea placeholder="请输入您需要反馈的内容" class="feed-text" model:value="{{feed}}" bindicatornput="feedbackInput"></textarea>
     </view>
     <view class="submit-butt-layout" bind:tap="submit"
         style="position: fixed; left: 8px; right: 8px; bottom: 8px; box-sizing: border-box; ">

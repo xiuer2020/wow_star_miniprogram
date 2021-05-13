@@ -1,5 +1,6 @@
 const app = getApp();
 import Toast from '../../../miniprogram_npm/@vant/weapp/toast/toast';
+import {request} from '../../../utils/index.js';
 Page({
     /**
      * 页面的初始数据
@@ -13,17 +14,17 @@ Page({
         // 收货人手机号
         region: '',
         // 地区
-        detailAddr: '',
+        detailAddress: '',
         // 详细地址
-        currentAddr: false,
+        currentAddress: false,
         // 是否为当前收货地址
-        emitAddr: null,
+        emitAddress: null,
         // 编辑的地址
     },
     Toast,
-    defaultAddrUpdate: function (e) {
+    defaultAddressUpdate: function (e) {
         this.setData({
-            currentAddr: e.detail
+            currentAddress: e.detail
         });
     },
     // 切换默认地址
@@ -34,31 +35,28 @@ Page({
     },
     // 页面导航
     save: function () {
-        wx.request({
-            url: 'http://127.0.0.1:8000/api/updateAddr',
-            header:['authorization'],
+        request({
+            url: '/updateAddress',
+            method: 'POST',
             data: {
-                token: app.user.token,
                 name: this.data.name,
                 region: this.data.region,
-                detailAddr: this.data.detailAddr,
-                currentAddr: Number(this.data.currentAddr),
+                detail_address: this.data.detailAddress,
+                current_address: Number(this.data.currentAddress),
                 phone: this.data.name,
-                addressId: this.data.emitAddr.id
-            },
-            success: res => {
-                Toast('更新地址成功');
-                setTimeout(() => {
-                    wx.navigateTo({
-                        url: '/pages/me/address/address',
-                    })
-                }, 400)
-            },
-            fail: err => {
-                wx.showToast({
-                    title: 'err',
-                })
+                address_id: this.data.emitAddress.id
             }
+        }).then(res => {
+            return request({
+                url: '/getAddress',
+                method: 'POST'
+            })
+        }).then(res => {
+            app.user.addresses = res;
+            console.log(app.user.addresses);
+            wx.navigateTo({
+                url: '/pages/me/address/address',
+            })
         })
 
     },
@@ -82,12 +80,12 @@ Page({
      */
     onShow: function () {
         this.setData({
-            emitAddr: app.user.emitAddr,
-            name: app.user.emitAddr.name,
-            phone: app.user.emitAddr.phone,
-            region: app.user.emitAddr.region,
-            detailAddr: app.user.emitAddr.detail_address,
-            currentAddr: app.user.emitAddr.current_address
+            emitAddress: app.user.emitAddress,
+            name: app.user.emitAddress.name,
+            phone: app.user.emitAddress.phone,
+            region: app.user.emitAddress.region,
+            detailAddress: app.user.emitAddress.detail_address,
+            currentAddress: Boolean(app.user.emitAddress.current_address)
         })
     },
 

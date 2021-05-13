@@ -14,6 +14,7 @@ postType邮递类型
 # miscellaneous 杂
 status 状态
 Indicator 指示
+time stamp 时间戳
 
 
 # vant 框架vant
@@ -24,10 +25,14 @@ ConvertTo 转换成
 returnToPreviousPage 返回上一页
 countDown 倒计时
 
+# argument 参数
+relyOn 依赖
+
 # css
 rankingList 排行榜
 common problem常见问题
 
+# 
 
 
 

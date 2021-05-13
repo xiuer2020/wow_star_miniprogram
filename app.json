@@ -1,11 +1,11 @@
 {
     "pages": [
-        "pages/home/order/order",
+        "pages/me/index/index",
+        "pages/login/login",
         "pages/home/index/index",
+        "pages/home/order/order",
         "pages/home/good/good",
         "pages/me/order/order",
-        "pages/login/login",
-        "pages/me/index/index",
         "pages/me/emit-address/emit-address",
         "pages/home/ranking-list/ranking-list",
         "pages/me/feed/feed",
@@ -40,17 +40,15 @@
     "window": {
         "backgroundTextStyle": "light",
         "navigategationBarBackgroundColor": "#fff",
-        "navigategationBarTitleText": "Weixin",
         "navigategationBarTextStyle": "black",
-        "navigategationStyle": "custom" 
+        "navigationStyle": "custom"
     },
     "tabBar": {
         "color": "#8d9096",
         "selectedColor": "#0d0d0d",
         "backgroundColor": "#fff",
         "borderStyle": "white",
-        "list": [
-            {
+        "list": [{
                 "pagePath": "pages/home/index/index",
                 "text": "首页",
                 "iconPath": "assets/images/shouye.png",

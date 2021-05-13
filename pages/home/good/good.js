@@ -56,14 +56,14 @@ Page({
     },
     // 立即购买
     toOrder: function () {
-
-        if (!app.user.token) {
+        console.log(wx.getStorageSync('token'));
+        if (!wx.getStorageSync('token')) {
             Dialog.confirm({
                 title: '温馨提示',
                 message: '请先进行登录',
             }).then(res => {
                 wx.navigateTo({
-                    url: '/pages/home/order/order',
+                    url: '/pages/login/login',
                 })
             }, () => {})
             return;
@@ -101,21 +101,32 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        let timeRema = Math.floor((new Date(app.order.selectedGood.deadline).getTime() - Date.now()) / 1000);
-        this.setData({
-            good: app.order.selectedGood
+        let timeStamp = Math.floor((new Date(app.order.selectedGood.deadline).getTime() - Date.now()) / 1000);
+        timeStamp = timeStamp <= 0 ? 0 :timeStamp; 
+        const promise = new Promise(resolve => {
+            this.setData({
+                good: app.order.selectedGood,
+                countDownText: getCountDown(timeStamp)
+            });
+            wx.showLoading({
+                title: '加载中'
+            });
+            resolve();
+        }).then(() => {
+            wx.hideLoading();
         })
+        
 
         let timer = setInterval(() => {
-            if (timeRema <= 0) {
+            if (timeStamp <= 0) {
                 clearInterval(timer);
                 timer = null;
-                timeRema = null;
+                timeStamp = null;
             }
             this.setData({
-                countDownText: getCountDown(timeRema)
+                countDownText: getCountDown(timeStamp)
             })
-            timeRema--
+            timeStamp--
         }, 1000)
     },
     /**

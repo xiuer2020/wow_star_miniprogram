@@ -1,4 +1,5 @@
 import Toast from '../../../miniprogram_npm/@vant/weapp/toast/toast';
+import {request} from '../../../utils/index.js';
 const app = getApp();
 Page({
   /**
@@ -19,24 +20,19 @@ Page({
   feedbackInput: function(e){},
   // 反馈信息输入
   submit: function () {
-    wx.request({
-      url: 'http://127.0.0.1:8000/api/setFeedback',
+    request({
+      url: '/setFeedback',
+      method: 'post',
       data: {
-        token: app.user.token,
         description:  this.data.feed
-      },
-      success: res => {
-        console.log(res);
-      },
-      fail: err => {
-        wx.showToast({
-          title: 'err',
-        })
       }
-    })
-    return 
-    wx.switchTab({
-      url: '/pages/me/index/index',
+    }).then(() => {
+      wx.showToast({
+        title: '提交成功',
+      })
+      wx.switchTab({
+        url: '/pages/me/index/index',
+      })
     })
   },
   // 反馈信息提交

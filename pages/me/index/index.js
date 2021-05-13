@@ -19,19 +19,26 @@ Page({
     },
     // 进入我的订单
     navigateAddress: function(){
-        wx.navigateTo({
-          url: '/pages/me/address/address',
-        })
+        if(wx.getStorageSync('token')){
+          wx.navigateTo({
+            url: '/pages/me/address/address',
+          });
+        }else{
+          wx.navigateTo({
+            url: '/pages/login/login'
+          });
+        }
+        
     },
     // 进入我的地址
     navigateFeed: function(){
+        
         wx.navigateTo({
           url: '/pages/me/feed/feed',
         })
     },
     // 进入意见反馈
     navigatePostPay: function(){
-        console.log('ente');
         wx.navigateTo({
           url: '/pages/me/post-pay/post-pay',
         })
@@ -41,7 +48,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+      
     },
 
     /**

@@ -1,5 +1,6 @@
 const app = getApp();
 import Toast from '../../../miniprogram_npm/@vant/weapp/toast/toast';
+import {request} from '../../../utils/index.js';
 Page({
   /**
    * 页面的初始数据
@@ -38,31 +39,24 @@ Page({
   comfirmOrder: function () {
 
     if(this.data.good && app.order.purchaseQuantity && this.data.postType && this.data.currentAddress){
-      wx.request({
-        url: 'http://127.0.0.1:8000/api/comfirmOrder',
+      request({
+        url: '/comfirmOrder',
+        method: 'POST',
         data: {
-          token: app.user.token,
-          goodId: this.data.good.id,
-          goodQuantity: app.order.purchaseQuantity,
+          good_id: this.data.good.id,
+          quantity: app.order.purchaseQuantity,
           address: `${this.data.currentAddress.region}${this.data.currentAddress.detail_address}`,
-          mailingType: this.data.postType
-        },
-        success: res => {
-          console.log(res);
-        },
-        fail: err => {
-          wx.showToast({
-            title: 'err',
-          })
+          post_type: this.data.postType
         }
+      }).then(res => {
+        console.log(res);
       })
     }else{
       Toast('请填写完整信息');
     }
 
-    return
     wx.navigateTo({
-      url: '/pages/login/login',
+      url: '/pages/me/order/order',
     })
   },
   // 确认订单
