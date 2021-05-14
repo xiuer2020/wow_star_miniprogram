@@ -6,57 +6,21 @@
         </view>
     </van-nav-bar>
     <view class="top-three base-flex mt-xs">
-        <view class="item fx1 mr-sm base-flex fxdc aic">
+        <view class="item fx1 mr-sm base-flex fxdc aic" wx:for="{{topThresRankingList}}">
             <view class="titl">No.1</view>
             <view class="image-layout"></view>
-            <view class="name">YUAN</view>
-            <view class="c-text-sm pt-xs">21套</view>
-        </view>
-        <view class="item fx1 mr-sm base-flex fxdc aic">
-            <view class="titl">No.1</view>
-            <view class="image-layout"></view>
-            <view class="name">YUAN</view>
-            <view class="c-text-sm pt-xs">21套</view>
-        </view>
-        <view class="item fx1 base-flex fxdc aic">
-            <view class="titl">No.1</view>
-            <view class="image-layout"></view>
-            <view class="name">YUAN</view>
-            <view class="c-text-sm pt-xs">21套</view>
+            <view class="name">{{item.user.name}}</view>
+            <view class="c-text-sm pt-xs">{{item.quantity}}套</view>
         </view>
     </view>
     <view class="list">
-        <view class="item base-flex jcsb aic">
+        <view class="item base-flex jcsb aic" wx:for="{{forwardRankingList}}">
             <view class="base-flex aic">
-                <view class="seri">4</view>
+                <view class="seri">{{index+3}}</view>
                 <view class="image-layout ml-md mr-xs"></view>
-                <view class="name">倪氏</view>
+                <view class="name">{{item.user.name}}</view>
             </view>
-            <view class="purchaseQuantity c-text-sm">20套</view>
-        </view>
-        <view class="item base-flex jcsb aic">
-            <view class="base-flex aic">
-                <view class="seri">4</view>
-                <view class="image-layout ml-md mr-xs"></view>
-                <view class="name">倪氏</view>
-            </view>
-            <view class="purchaseQuantity c-text-sm">20套</view>
-        </view>
-        <view class="item base-flex jcsb aic">
-            <view class="base-flex aic">
-                <view class="seri">4</view>
-                <view class="image-layout ml-md mr-xs"></view>
-                <view class="name">倪氏</view>
-            </view>
-            <view class="purchaseQuantity c-text-sm">20套</view>
-        </view>
-        <view class="item base-flex jcsb aic">
-            <view class="base-flex aic">
-                <view class="seri">4</view>
-                <view class="image-layout ml-md mr-xs"></view>
-                <view class="name">倪氏</view>
-            </view>
-            <view class="purchaseQuantity c-text-sm">20套</view>
+            <view class="purchaseQuantity c-text-sm">{{item.quantity}}套</view>
         </view>
     </view>
 </view>

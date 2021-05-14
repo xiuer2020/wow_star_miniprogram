@@ -6,5 +6,12 @@
         </view>
     </van-nav-bar>
     <van-empty description="暂无订单" custom-class="empt-custom" class="empt" wx:if="{{false}}"></van-empty>
-    <van-empty description="暂无订单" custom-class="empt-custom" class="empt" wx:else></van-empty>
+    <van-cell-goup wx-else class="addresses">
+        <van-cell label="{{item.good.name}} {{item.number}}" is-link data-item="{{item}}" wx:for="{{orders}}">
+            <view slot="title">
+                <text class="iconfont icon-iconset0391 mr-base" wx:if="{{item.current_address == 1}}"></text>
+                <text>{{item.user.name}} {{item.user.phone}}</text>
+            </view>
+        </van-cell>
+    </van-cell-goup>
 </view>

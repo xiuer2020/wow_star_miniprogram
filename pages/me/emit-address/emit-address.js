@@ -53,10 +53,13 @@ Page({
             })
         }).then(res => {
             app.user.addresses = res;
-            console.log(app.user.addresses);
-            wx.navigateTo({
-                url: '/pages/me/address/address',
-            })
+            Toast('更新地址成功');
+            setTimeout(() => {
+                wx.navigateTo({
+                    url: '/pages/me/address/address',
+                })
+            }, 400);
+            
         })
 
     },

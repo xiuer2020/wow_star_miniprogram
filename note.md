@@ -9,12 +9,16 @@ cPLg主题色
 
 # order 订单
 purchaseQuantity 购买数量
-postType邮递类型
+postType 邮递类型
+record 记录
+Purchase quantity 购买数量
+
 
 # miscellaneous 杂
 status 状态
 Indicator 指示
 time stamp 时间戳
+Forward 靠前
 
 
 # vant 框架vant

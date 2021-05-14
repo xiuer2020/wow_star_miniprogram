@@ -56,7 +56,6 @@ Page({
     },
     // 立即购买
     toOrder: function () {
-        console.log(wx.getStorageSync('token'));
         if (!wx.getStorageSync('token')) {
             Dialog.confirm({
                 title: '温馨提示',

@@ -1,5 +1,8 @@
 const app = getApp();
 import Toast from '../../../miniprogram_npm/@vant/weapp/toast/toast';
+import {
+    request
+} from '../../../utils/index.js';
 Page({
     /**
      * 页面的初始数据
@@ -18,7 +21,6 @@ Page({
         currentAddress: false,
         // 是否为当前收货地址
     },
-    Toast,
     defaultAddressUpdate: function (e) {
         this.setData({
             currentAddress: e.detail
@@ -32,30 +34,32 @@ Page({
     },
     // 页面导航
     save: function () {
-        wx.request({
-            url: 'http://127.0.0.1:8000/api/setAddress',
+        request({
+            url: '/setAddress',
+            method: 'post',
             data: {
-                token: app.user.token,
                 name: this.data.name,
                 region: this.data.region,
-                detailAddress: this.data.detailAddress,
-                currentAddress: Number(this.data.currentAddress),
-                phone: this.data.name
-            },
-            success: res => {
-              Toast('添加地址成功');
-              setTimeout(() => {
-                wx.navigateBack();
-              }, 400)
-            },
-            fail: err => {
-                wx.showToast({
-                  title: 'err',
-                })
+                detail_address: this.data.detailAddress,
+                current_address: Number(this.data.currentAddress),
+                phone: this.data.phone
             }
+        }).then(res => {
+            return request({
+                url: '/getAddress',
+                method: 'post'
+            })
+        }).then(res => {
+            app.user.addresses = res;
+            Toast('添加地址成功');
+            setTimeout(() => {
+                wx.navigateTo({
+                    url: '/pages/me/address/address',
+                })
+            }, 400);
         })
 
- 
+
     },
     // 保存
     /**

@@ -9,6 +9,8 @@ App({
     // 验证信息
     addresses: null,
     // 地址
+    orders: null,
+    // 用户的订单
     emitAddress: null,
     // 编辑的地址
     encryptedData: null,

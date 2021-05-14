@@ -1,4 +1,5 @@
-// pages/me/order/order.js
+import {request} from '../../../utils/index.js';
+const app = getApp();
 Page({
     /**
      * 页面的初始数据
@@ -30,7 +31,20 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+      if(app.user.orders){
+        this.setData({
+          order: app.user.orders
+        });
+      }else{
+        request({
+          url: "/getMyOrders",
+          method: 'post'
+        }).then(res => {
+          this.setData({
+            orders: res.orders
+          });
+        })
+      }
     },
 
     /**

@@ -1,13 +1,13 @@
 {
     "pages": [
+        "pages/home/index/index",
+        "pages/home/ranking-list/ranking-list",
         "pages/me/index/index",
         "pages/login/login",
-        "pages/home/index/index",
         "pages/home/order/order",
         "pages/home/good/good",
         "pages/me/order/order",
         "pages/me/emit-address/emit-address",
-        "pages/home/ranking-list/ranking-list",
         "pages/me/feed/feed",
         "pages/me/post-pay/post-pay",
         "pages/me/address/address",

@@ -37,7 +37,7 @@ Page({
   },
   // 寄件类型更新
   comfirmOrder: function () {
-
+    console.log(this.data.good, app.order.purchaseQuantity, this.data.postType, this.data.currentAddress);
     if(this.data.good && app.order.purchaseQuantity && this.data.postType && this.data.currentAddress){
       request({
         url: '/comfirmOrder',
@@ -45,19 +45,20 @@ Page({
         data: {
           good_id: this.data.good.id,
           quantity: app.order.purchaseQuantity,
-          address: `${this.data.currentAddress.region}${this.data.currentAddress.detail_address}`,
+          region: this.data.currentAddress.region,
+          detail_address: this.data.currentAddress.detail_address,
           post_type: this.data.postType
         }
       }).then(res => {
-        console.log(res);
+        wx.navigateTo({
+          url: '/pages/me/order/order',
+        })
       })
     }else{
       Toast('请填写完整信息');
     }
 
-    wx.navigateTo({
-      url: '/pages/me/order/order',
-    })
+   
   },
   // 确认订单
   buyIntrodutionShow: function () {

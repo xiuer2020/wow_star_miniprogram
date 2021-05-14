@@ -40,6 +40,12 @@ Page({
         allGoodList: res,
         hotGoodList: res.slice(0, 4)
       })
+
+      request({
+        url: '/test'
+      }).then(res2 => {
+        console.log(res2);
+      })
     });
   }
 })

@@ -1,9 +1,13 @@
-// pages/home/ranking-list/ranking-list.js
+const { request } = require("../../../utils/index.js");
+import _ from 'lodash';
+const app = getApp();
 Page({
     /**
      * 页面的初始数据
      */
-    data: {},
+    data: {
+
+    },
     navBarClickLeft: function () {
         wx.navigateTo({
             url: '/pages/home/good/good',
@@ -23,7 +27,24 @@ Page({
     /**
      * 生命周期函数--监听页面显示
      */
-    onShow: function () {},
+    onShow: function () {
+        // console.log(app.order.selectedGood);
+        request({
+            url: '/getRankingList',
+            method: 'post',
+            data: {
+                // good_id: app.order.selectedGood.id
+                good_id: 1
+            }
+        }).then(res => {
+            console.log();
+           this.setData({
+               rankingList: res,
+               topThresRankingList: res.slice(0,3),
+               forwardRankingList: res.slice(3, 100)
+           })
+        })
+    },
     /**
      * 生命周期函数--监听页面隐藏
      */
